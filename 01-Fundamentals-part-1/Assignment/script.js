@@ -28,31 +28,17 @@ const isFulAge = ageJonas >= 18;
 console.log("Jonas's age " + ageJonas);
 console.log("Sarah's age " + ageSarah);
 console.log(ageJonas < ageSarah);
-console.log( ageJonas >= 18);
+console.log(isFulAge);
 
 // Lecture: Basic Operators
 const halfPopulation = population * 1000000/2;
 console.log (halfPopulation + " people would live in each half.");
 
-let increasePopulation = population*1000000 + 1;
+const increasePopulation = population * 1000000 + 1;
 console.log("My country population increase 1 people" + increasePopulation);
 
-const morePopulation = population > 6;
-if(morePopulation)
+const finlandPopulation = 6;
+if(population > finlandPopulation)
     console.log("My country have more people than Finland");
-else console.log("My country haven't more people than Finland")
-
-// Challenge 1
-const massMark = 78;
-const heightMark = 1.69;
-const massJon = 92;
-const heightJon = 1.95;
-
-const BMIMark = massMark / (heightMark * heightMark);
-const BMIJohn = massJon / (heightJon * heightJon);
-
-console.log("BMIMark " + BMIMark);
-console.log("BMIJohn " + BMIJohn);
-
-const markHeigherBMI = BMIMark > BMIJohn;
-console.log ("Mark has a higher BMI than John " + markHeigherBMI);
+else
+    console.log("Finland have more people than my country ");
