@@ -1,6 +1,6 @@
 
 # Practice to learn JavaScript
-["The Complete JavaScript Course 2023: From Zero to Expert!" Udemy course"](https://www.udemy.com/course/the-complete-javascript-course/)
+["The Complete JavaScript Course 2023: From Zero to Expert!" course](https://www.udemy.com/course/the-complete-javascript-course/)
 
 ## Clone
 Clone this repo by run:
