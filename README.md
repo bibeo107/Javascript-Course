@@ -16,6 +16,13 @@ Open the inspect window:
  + Mac: Cmd + Option + I <br />
 
 Select the Console tab to view the Javascript output.
+
+### Run JS with node
+#### Require:
+Installing node.<br />
+#### Run JS code
+Open Terminal. <br/>
+Type: node jsFileName.js<br/>
 ### Run JS Using Code Runner Extension
 #### Require:
 Installing node.<br />
@@ -23,3 +30,4 @@ Install the Code Runner Extension in VS code.<br />
 #### Run JS code
 Open JavaScript Code in VSCode then run code.<br />
 Run code: CTRL+ALT+N to view output.<br />
+
