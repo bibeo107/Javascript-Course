@@ -1,0 +1,15 @@
+{
+  "name": "javascript-course",
+  "version": "1.0.0",
+  "description": "[\"The Complete JavaScript Course 2023: From Zero to Expert!\" course](https://www.udemy.com/course/the-complete-javascript-course/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "tham.vu@go1.com",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.47.0"
+  }
+}

@@ -23,11 +23,11 @@ const heightMark = 1.88;
 const massJohn = 85;
 const heightJohn = 1.76;
 
-const BMIMark = massMark / (heightMark **2);
+const BMIMark = massMark / (heightMark ** 2);
 const BMIJohn = massJohn / (heightJohn ** heightJohn);
 
-console.log("BMIMark " + BMIMark);
-console.log("BMIJohn " + BMIJohn);
+console.log('BMIMark ' + BMIMark);
+console.log('BMIJohn ' + BMIJohn);
 
 const markHeigherBMI = BMIMark > BMIJohn;
-console.log ("Mark has a higher BMI than John " + markHeigherBMI);
+console.log('Mark has a higher BMI than John ' + markHeigherBMI);
