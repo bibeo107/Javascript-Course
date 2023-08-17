@@ -56,16 +56,16 @@ console.log('My country population increase 1 people ' + increasePopulation);
 //4.3
 const finlandPopulation = 6;
 if (population > finlandPopulation)
-  console.log('My country have more people than Finland.');
+	console.log('My country have more people than Finland.');
 else
-  console.log('Finland have more people than my country.');
+	console.log('Finland have more people than my country.');
 
 //4.4
 const avaragePopulation = 33; // million
 if (population < avaragePopulation)
-  console.log('My country have less than the average population.');
+	console.log('My country have less than the average population.');
 else
-  console.log('My country have more then the avarage population.');
+	console.log('My country have more then the avarage population.');
 
 //4.5
 const description = country + ' is in ' + continent + ', and its ' + population + ' million people speak ' + language;
