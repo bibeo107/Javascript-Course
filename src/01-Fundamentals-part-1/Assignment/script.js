@@ -76,3 +76,5 @@ console.log(description);
 console.log('5. Strings and Template Literals');
 const newDescription = `${country} is in ${continent}, and its ${population} million people speak ${language};`;
 console.log(newDescription);
+
+  console.log('Try to test eslint warning when error. ');
