@@ -4,7 +4,8 @@
   "description": "[\"The Complete JavaScript Course 2023: From Zero to Expert!\" course](https://www.udemy.com/course/the-complete-javascript-course/)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint src",
+    "lint-fix": "eslint src --fix"
   },
   "keywords": [],
   "author": "tham.vu@go1.com",
