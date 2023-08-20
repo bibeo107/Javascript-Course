@@ -1,6 +1,6 @@
 // Coding Challenge #1
 /* Chanllege description:
-Mark and John are trying to compare their BMI (Body Mass Index), which is calculated using the formula:
+Mark and John are trying to compare their BMI, which is calculated using the formula:
 BMI = mass / height ** 2 = mass / (height * height) (mass in kg and height in meter).
 Your tasks:
 1. StoreMark'sandJohn'smassandheightinvariables
@@ -26,8 +26,8 @@ const heightJohn = 1.76;
 const BMIMark = massMark / (heightMark ** 2);
 const BMIJohn = massJohn / (heightJohn ** heightJohn);
 
-console.log('BMIMark ' + BMIMark);
-console.log('BMIJohn ' + BMIJohn);
+console.log('BMIMark ', BMIMark);
+console.log('BMIJohn ', BMIJohn);
 
 const markHeigherBMI = BMIMark > BMIJohn;
-console.log('Mark has a higher BMI than John ' + markHeigherBMI);
+console.log('Mark has a higher BMI than John ', markHeigherBMI);

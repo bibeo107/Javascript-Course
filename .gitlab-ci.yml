@@ -7,5 +7,6 @@ eslint:
   stage: lint
   script:
     - npm install -g eslint
+    - npm i eslint-config-airbnb-base
     - eslint --init
     - npm run lint
