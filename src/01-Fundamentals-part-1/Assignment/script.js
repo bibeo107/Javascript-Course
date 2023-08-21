@@ -60,7 +60,8 @@ else console.log('Finland have more people than my country.');
 
 // 4.4
 const avaragePopulation = 33; // million
-if (population < avaragePopulation) console.log('My country have less than the average population.');
+if (population < avaragePopulation)
+    console.log('My country have less than the average population.');
 else console.log('My country have more then the avarage population.');
 
 // 4.5

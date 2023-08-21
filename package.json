@@ -2,17 +2,20 @@
   "name": "javascript-course",
   "version": "1.0.0",
   "description": "[\"The Complete JavaScript Course 2023: From Zero to Expert!\" course](https://www.udemy.com/course/the-complete-javascript-course/)",
-  "main": "index.js",
+  "main": ".eslintrc.js",
   "scripts": {
-    "lint": "eslint src",
-    "lint-fix": "eslint src --fix"
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix"
   },
   "keywords": [],
-  "author": "tham.vu@go1.com",
+  "author": "thamvu107@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.47.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.28.1"
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "3.0.2"
   }
 }

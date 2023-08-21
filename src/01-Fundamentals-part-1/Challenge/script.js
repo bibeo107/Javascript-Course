@@ -23,8 +23,8 @@ const heightMark = 1.88;
 const massJohn = 85;
 const heightJohn = 1.76;
 
-const BMIMark = massMark / (heightMark ** 2);
-const BMIJohn = massJohn / (heightJohn ** heightJohn);
+const BMIMark = massMark / heightMark ** 2;
+const BMIJohn = massJohn / heightJohn ** heightJohn;
 
 console.log('BMIMark ', BMIMark);
 console.log('BMIJohn ', BMIJohn);
