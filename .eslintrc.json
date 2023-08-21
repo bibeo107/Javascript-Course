@@ -1,23 +1,10 @@
-module.exports = {
+{
     "env": {
         "browser": true,
         "es2021": true
     },
     "extends": ["airbnb-base", "plugin:prettier/recommended"],
     "plugins": ["prettier"],
-    "overrides": [
-        {
-            "env": {
-                "node": true
-            },
-            "files": [
-                ".eslintrc.{js,cjs}"
-            ],
-            "parserOptions": {
-                "sourceType": "script"
-            }
-        }
-    ],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"
@@ -25,19 +12,19 @@ module.exports = {
     "rules": {
         "indent": [
             "error",
-            4,
+            4
         ],
         "linebreak-style": [
             "error",
-            "unix",
+            "unix"
         ],
         "quotes": [
             "error",
-            "single",
+            "single"
         ],
         "semi": [
             "error",
-            "always",
+            "always"
         ],
         "no-console": "off",
         "no-unused-vars": 0,
@@ -45,4 +32,5 @@ module.exports = {
         "no-use-before-define": 0,
         "max-len": 0
     }
+
 }
