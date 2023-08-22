@@ -1,3 +1,6 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-useless-concat */
+/* eslint-disable prefer-template */
 // 1. Lecture values and variables
 /*--------------------------------------------------------*/
 console.log(' 1. Lecture values and variables');
@@ -98,3 +101,29 @@ if (population > 33) {
 } else {
     console.log(`${country} is ${33 - population} million below average`);
 }
+
+// 7. Type conversion and coercion
+/*----------------------------------------------------------------*/
+console.log('7. Type conversion and coercion');
+
+// 7.1 Type conversion
+const inputYear = '1989';
+console.log(inputYear, Number(inputYear));
+console.log(inputYear + 18);
+
+console.log(Number('Jonas')); // NaN
+
+console.log(String(23), 23);
+
+// 7.2 type coercion
+// eslint-disable-next-line prefer-template
+console.log('I am ' + 23 + ' years old');
+console.log('23' + '10' + 3); // 23103
+console.log('23' * '2' / '2' - '3'); // 20
+
+// Assignment - presict then execute the operations
+console.log('9' - '5'); // Predict: 4
+console.log('19' - '13' + '17'); // Predict: 617
+console.log('19' - '13' + 17); // Predict: 23
+console.log('123' < 57); // Predict: false
+console.log(5 + 6 + '4' + 9 - 4 - 2); // Predict: 1143
