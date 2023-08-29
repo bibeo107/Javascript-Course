@@ -56,15 +56,9 @@ try {
     console.log(e.message);
 }
 
+//----------------------------------------------------------------
 // 1.3 Class Hoisting
 console.log('1.3 Class declaration hoisting');
-
-/* try {
-  new MyClass(); // ReferenceError: Cannot access 'MyClass' before initialization
-  class MyClass {}
-} catch (e) {
-  console.log(e.message);
-} */
 
 try {
     var Frodo = new Hobbit();
@@ -82,4 +76,5 @@ try {
     console.log(e.message);
 }
 
+//----------------------------------------------------------------
 // Import Hoisting
