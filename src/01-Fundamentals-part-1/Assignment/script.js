@@ -119,7 +119,7 @@ console.log(String(23), 23);
 // eslint-disable-next-line prefer-template
 console.log('I am ' + 23 + ' years old');
 console.log('23' + '10' + 3); // 23103
-console.log('23' * '2' / '2' - '3'); // 20
+console.log(('23' * '2') / '2' - '3'); // 20
 
 // Assignment - presict then execute the operations
 console.log('9' - '5'); // Predict: 4

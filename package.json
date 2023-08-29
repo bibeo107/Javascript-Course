@@ -5,7 +5,9 @@
   "main": ".eslintrc.js",
   "scripts": {
     "lint": "eslint .",
-    "lint-fix": "eslint . --fix"
+    "lint-fix": "eslint . --fix",
+    "format-check": "npx prettier src --check",
+    "format-fix": "npx prettier src --write"
   },
   "keywords": [],
   "author": "thamvu107@gmail.com",
