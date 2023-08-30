@@ -127,3 +127,32 @@ console.log('19' - '13' + '17'); // Predict: 617
 console.log('19' - '13' + 17); // Predict: 23
 console.log('123' < 57); // Predict: false
 console.log(5 + 6 + '4' + 9 - 4 - 2); // Predict: 1143
+
+// ----------------------------------------------------------------
+// 8. Truthy and falsy values
+console.log('8.1 Falsy values');
+// falsy values: false, 0 , -0, 0n, '', null, undefined, NaN
+console.log(Boolean(false));
+console.log(Boolean(0));
+console.log(Boolean(-0));
+console.log(Boolean(0n));
+console.log(Boolean(''));
+console.log(Boolean(null));
+console.log(Boolean(undefined));
+console.log(Boolean(NaN));
+console.log(Boolean([].length));
+
+// All other values are considered truthy values.
+console.log('8.2 Truthy values');
+console.log(Boolean('false'));
+console.log(Boolean('undefined'));
+console.log(Boolean('0'));
+console.log(Boolean([]));
+console.log(Boolean({}));
+
+const money = 0;
+if (money) {
+    console.log('Don\'t spend it all;');
+} else {
+    console.log('You should get a job!');
+}

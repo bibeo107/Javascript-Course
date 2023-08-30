@@ -39,7 +39,7 @@ function square(n) {
 // Note: Function hoisting don't work with function expressions and arrow functions.
 try {
     console.log(add(3, 5));
-    var add = function(i, j) {
+    var add = function (i, j) {
         return i + j;
     };
 } catch (e) {
@@ -51,7 +51,6 @@ try {
     var addArrowFunc = (i, j) => {
         return i + j;
     };
-
 } catch (e) {
     console.log(e.message);
 }
