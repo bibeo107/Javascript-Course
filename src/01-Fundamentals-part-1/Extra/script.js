@@ -77,3 +77,27 @@ try {
 
 //----------------------------------------------------------------
 // Import Hoisting
+
+// 2. Logical Operators
+// Task
+console.log(console.log(1) && console.log(2)); // 1 & undefined
+
+let age = 30;
+// Write an if condition to check that age is between 14 and 90 inclusively.
+if (age >= 14 && age <= 90) console.log('age is between 14 and 90 inclusively.');
+
+age = 10;
+// Write an if condition to check that age is NOT between 14 and 90 inclusively.
+if (!(age >= 14 && age <= 90))
+    console.log('use NOT operator: age is NOT between 14 and 90 inclusively.');
+if (age < 14 || age > 90) console.log('Use OR operator: age is NOT between 14 and 90 inclusively.');
+
+const hasDriversLicense = true;
+const hasGoodVision = true;
+const isTired = true;
+
+if (hasDriversLicense && hasGoodVision && !isTired) {
+    console.log('Sarah is able to drive!');
+} else {
+    console.log('Someone else should drive ...');
+}

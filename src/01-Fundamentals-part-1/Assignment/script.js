@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-useless-concat */
 /* eslint-disable prefer-template */
@@ -128,8 +129,9 @@ console.log('19' - '13' + 17); // Predict: 23
 console.log('123' < 57); // Predict: false
 console.log(5 + 6 + '4' + 9 - 4 - 2); // Predict: 1143
 
-// ----------------------------------------------------------------
 // 8. Truthy and falsy values
+// ----------------------------------------------------------------
+console.log('8. Truthy and falsy values');
 console.log('8.1 Falsy values');
 // falsy values: false, 0 , -0, 0n, '', null, undefined, NaN
 console.log(Boolean(false));
@@ -156,3 +158,43 @@ if (money) {
 } else {
     console.log('You should get a job!');
 }
+
+// 9. Logical Operators
+// https://javascript.info/logical-operators
+//----------------------------------------------------------------
+console.log('9. Logical Operators');
+// Note: ! > && > ||
+
+console.log('9.1 !(NOT)');
+
+console.log(null); // null
+console.log(!null); // true
+console.log(!!null); // false
+
+console.log('9.2 && (AND)');
+console.log(1 && 2 && null && 3); // null
+console.log(1 && 2 && 3); // 3
+
+const person = {
+    name: 'Tham',
+    age: 34
+};
+console.log(person.age > 18 && `${person.name} is allowed driving`);
+
+console.log('9.3 || (OR)');
+console.log(undefined || null || 0); // Result: 0
+console.log(null || (2 && 3) || 4); // Result: 3
+
+// 1. Getting the first truthy value from a list of variables or expressions.
+const fullName = '';
+const nickName = 'Coder';
+console.log(fullName || nickName || 'Anonymous'); // Coder
+
+// 2. Short-circuit evaluation.
+console.log(person.job || 'unemployed'); // person.job = undefined => Result: unemployed.
+
+// NOTE: Don’t replace if with || or &&
+const x = 1;
+
+x > 0 && console.log('Greater than zero!'); // "shorter way to write if".
+if (x > 0) console.log('Greater than zero!'); // IF is more obvious and tends to be a little bit more readable.
