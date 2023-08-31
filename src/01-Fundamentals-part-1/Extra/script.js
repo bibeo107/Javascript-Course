@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable prefer-const */
 /* eslint-disable no-var */
 /* eslint-disable vars-on-top */
@@ -92,6 +93,7 @@ if (!(age >= 14 && age <= 90))
     console.log('use NOT operator: age is NOT between 14 and 90 inclusively.');
 if (age < 14 || age > 90) console.log('Use OR operator: age is NOT between 14 and 90 inclusively.');
 
+//----------------------------------------------------------------
 const hasDriversLicense = true;
 const hasGoodVision = true;
 const isTired = true;
@@ -101,3 +103,26 @@ if (hasDriversLicense && hasGoodVision && !isTired) {
 } else {
     console.log('Someone else should drive ...');
 }
+
+//----------------------------------------------------------------
+/* Task: Check the login
+Write the code which asks for a login with prompt.
+If the visitor enters "Admin", then prompt for a password, if the input is an empty line or Esc – show “Canceled”, if it’s another string – then show “I don’t know you”.
+The password is checked as follows:
+    + If it equals “TheMaster”, then show “Welcome!”,
+    + Another string – show “Wrong password”,
+    + For an empty string or cancelled input, show “Canceled”
+*/
+
+const prompt = require('prompt-sync')();
+
+let visitor = prompt('please enter who\'s are you');
+
+if (visitor === 'Admin') {
+    let password = prompt('please enter your password');
+    if (password === '' || password === null) console.log('Canceled');
+    else if (password === 'TheMaster') console.log('Welcome!');
+    else console.log('Wrong password');
+} else if (visitor === '' || visitor === null) {
+    console.log('Canceled');
+} else console.log('I don\'t know you');
