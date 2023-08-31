@@ -6,12 +6,12 @@
 /* eslint-disable prettier/prettier */
 
 // 1. Hoisting in JavaScript allows you to access functions and variables before they have been created.
-/* ----------------------------------------------------------------*/
+// ----------------------------------------------------------------
 
 console.log('1. Hoisting in JavaScript');
 // 1.1  Variale Hoisting
 console.log('1.2 Variable Hoisting ');
-console.log(bar); // undefined
+console.log(bar);
 var bar = 1;
 
 try {
@@ -31,7 +31,7 @@ try {
 // 1.2 Function Hoisting
 console.log('1.2 Hoisting function declarations');
 
-console.log(square(5)); // 25
+console.log(square(5));
 
 function square(n) {
     return n * n;
@@ -64,7 +64,7 @@ try {
     var Frodo = new Hobbit();
     Frodo.height = 100;
     Frodo.weight = 300;
-    console.log(Frodo); // Output: ReferenceError: Hobbit is not defined
+    console.log(Frodo);
 
     class Hobbit {
         constructor(height, weight) {

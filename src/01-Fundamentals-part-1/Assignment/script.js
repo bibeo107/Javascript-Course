@@ -111,23 +111,21 @@ console.log('7. Type conversion and coercion');
 const inputYear = '1989';
 console.log(inputYear, Number(inputYear));
 console.log(inputYear + 18);
-
-console.log(Number('Jonas')); // NaN
-
+console.log(Number('Jonas'));
 console.log(String(23), 23);
 
 // 7.2 type coercion
 // eslint-disable-next-line prefer-template
 console.log('I am ' + 23 + ' years old');
-console.log('23' + '10' + 3); // 23103
-console.log(('23' * '2') / '2' - '3'); // 20
+console.log('23' + '10' + 3);
+console.log(('23' * '2') / '2' - '3');
 
 // Assignment - presict then execute the operations
-console.log('9' - '5'); // Predict: 4
-console.log('19' - '13' + '17'); // Predict: 617
-console.log('19' - '13' + 17); // Predict: 23
-console.log('123' < 57); // Predict: false
-console.log(5 + 6 + '4' + 9 - 4 - 2); // Predict: 1143
+console.log('9' - '5');
+console.log('19' - '13' + '17');
+console.log('19' - '13' + 17);
+console.log('123' < 57);
+console.log(5 + 6 + '4' + 9 - 4 - 2);
 
 // 8. Truthy and falsy values
 // ----------------------------------------------------------------
@@ -167,13 +165,13 @@ console.log('9. Logical Operators');
 
 console.log('9.1 !(NOT)');
 
-console.log(null); // null
-console.log(!null); // true
-console.log(!!null); // false
+console.log(null);
+console.log(!null);
+console.log(!!null);
 
 console.log('9.2 && (AND)');
-console.log(1 && 2 && null && 3); // null
-console.log(1 && 2 && 3); // 3
+console.log(1 && 2 && null && 3);
+console.log(1 && 2 && 3);
 
 const person = {
     name: 'Tham',
@@ -182,16 +180,16 @@ const person = {
 console.log(person.age > 18 && `${person.name} is allowed driving`);
 
 console.log('9.3 || (OR)');
-console.log(undefined || null || 0); // Result: 0
-console.log(null || (2 && 3) || 4); // Result: 3
+console.log(undefined || null || 0);
+console.log(null || (2 && 3) || 4);
 
 // 1. Getting the first truthy value from a list of variables or expressions.
 const fullName = '';
 const nickName = 'Coder';
-console.log(fullName || nickName || 'Anonymous'); // Coder
+console.log(fullName || nickName || 'Anonymous');
 
 // 2. Short-circuit evaluation.
-console.log(person.job || 'unemployed'); // person.job = undefined => Result: unemployed.
+console.log(person.job || 'unemployed');
 
 // NOTE: Don’t replace if with || or &&
 const x = 1;
