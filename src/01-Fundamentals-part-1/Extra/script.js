@@ -1,3 +1,10 @@
+/* eslint-disable no-compare-neg-zero */
+/* eslint-disable no-new-wrappers */
+/* eslint-disable no-self-compare */
+/* eslint-disable quotes */
+/* eslint-disable use-isnan */
+/* eslint-disable yoda */
+/* eslint-disable eqeqeq */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable prefer-const */
 /* eslint-disable no-var */
@@ -79,10 +86,51 @@ try {
 //----------------------------------------------------------------
 // Import Hoisting
 
-// 2. Logical Operators
-// Task
-console.log(console.log(1) && console.log(2)); // 1 & undefined
+// 2. Equality Operators
+//----------------------------------------------------------------
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality
+console.log('2. Equality Operators');
+console.log('2.1 Double Equality Operators');
 
+// Primitive data types
+console.log('0 == -0 ->', 0 == -0);
+console.log('1 == -1 ->', 1 == -1);
+console.log(`'hello' == 'Hello' ->`, 'hello' == 'Hello');
+console.log(`Symbol('id') == Symbol('id') ->`, Symbol('id') == Symbol('id'));
+console.log('undefined == undefined ->', undefined == undefined);
+console.log('undefined == null ->', undefined == null);
+
+console.log(`'1' == 1 ->`, '1' == 1);
+console.log('false == 0 ->', false == 0);
+console.log('null == 0 ->', null == 0);
+
+// abstract data types
+console.log(`{} == {} ->`, {} == {});
+console.log(`[] == [] ->`, [] == []);
+
+const obj = { a: 1 };
+const sameValueObj = { a: 1 };
+const arr = [1];
+const sameValueArr = [1];
+const func = function () {};
+const sameValueFunc = function () {};
+console.log('obj == obj ->', obj == obj);
+console.log('obj == sameValueObj ->', obj == sameValueObj);
+console.log('arr == arr ->', arr == arr);
+console.log('arr == sameValueArr ->', arr == sameValueArr);
+console.log('func == func ->', func == func);
+console.log('func == sameValueFunc ->', func == sameValueFunc);
+
+// special case
+console.log('NaN == NaN ->', NaN == NaN);
+console.log('Infinity == Infinity ->', Infinity == Infinity);
+console.log(`1/0 == Infinity ->`, 1 / 0 == Infinity);
+
+// 3. Logical Operators
+//----------------------------------------------------------------
+console.log('3. Logical Operators');
+
+console.log(console.log(1) && console.log(2)); // 1 & undefined
 let age = 30;
 // Write an if condition to check that age is between 14 and 90 inclusively.
 if (age >= 14 && age <= 90) console.log('age is between 14 and 90 inclusively.');
@@ -116,7 +164,8 @@ The password is checked as follows:
 
 const prompt = require('prompt-sync')();
 
-let visitor = prompt('please enter who\'s are you');
+// let visitor = prompt('please enter who\'s are you');
+let visitor = ''; // skip prompt() enter visitor
 
 if (visitor === 'Admin') {
     let password = prompt('please enter your password');
@@ -125,4 +174,4 @@ if (visitor === 'Admin') {
     else console.log('Wrong password');
 } else if (visitor === '' || visitor === null) {
     console.log('Canceled');
-} else console.log('I don\'t know you');
+} else console.log("I don't know you");
