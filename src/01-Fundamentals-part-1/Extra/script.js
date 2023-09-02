@@ -91,40 +91,44 @@ try {
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality
 console.log('2. Equality Operators');
 console.log('2.1 Double Equality Operators');
+// Detail: https://262.ecma-international.org/5.1/#sec-11.9.3
 
 // Primitive data types
 console.log('0 == -0 ->', 0 == -0);
 console.log('1 == -1 ->', 1 == -1);
 console.log(`'hello' == 'Hello' ->`, 'hello' == 'Hello');
 console.log(`Symbol('id') == Symbol('id') ->`, Symbol('id') == Symbol('id'));
+
+// Note: falsy comparison -> false, 0, and '' are loosely equal
+console.log(`'' == null ->`, '' == null);
+console.log('false == 0 ->', false == 0);
+console.log('null == 0 ->', null == 0);
+console.log('false == null ->', false == null);
 console.log('undefined == undefined ->', undefined == undefined);
 console.log('undefined == null ->', undefined == null);
 
-console.log(`'1' == 1 ->`, '1' == 1);
-console.log('false == 0 ->', false == 0);
-console.log('null == 0 ->', null == 0);
-
 // abstract data types
-console.log(`{} == {} ->`, {} == {});
-console.log(`[] == [] ->`, [] == []);
+console.log(`[] == false ->`, []== false); // true
+console.log(`{} == false ->`, {} == false); // false
 
-const obj = { a: 1 };
-const sameValueObj = { a: 1 };
+const obj = {a:1};
+const sameValueObj = {a:1};
 const arr = [1];
 const sameValueArr = [1];
-const func = function () {};
-const sameValueFunc = function () {};
+const func = function(){};
+const sameValueFunc = function(){};
+
 console.log('obj == obj ->', obj == obj);
 console.log('obj == sameValueObj ->', obj == sameValueObj);
 console.log('arr == arr ->', arr == arr);
 console.log('arr == sameValueArr ->', arr == sameValueArr);
-console.log('func == func ->', func == func);
-console.log('func == sameValueFunc ->', func == sameValueFunc);
+console.log('func == func ->', func == func );
+console.log('func == sameValueFunc ->', func == sameValueFunc );
 
 // special case
 console.log('NaN == NaN ->', NaN == NaN);
 console.log('Infinity == Infinity ->', Infinity == Infinity);
-console.log(`1/0 == Infinity ->`, 1 / 0 == Infinity);
+console.log(`1/0 == Infinity ->`, 1/0 == Infinity);
 
 // 3. Logical Operators
 //----------------------------------------------------------------
