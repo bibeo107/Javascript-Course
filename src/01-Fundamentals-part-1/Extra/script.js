@@ -36,7 +36,7 @@ try {
 
 //----------------------------------------------------------------
 // 1.2 Function Hoisting
-console.log('1.2 Hoisting function declarations');
+console.log('\n1.2 Hoisting function declarations');
 
 console.log(square(5));
 
@@ -65,7 +65,7 @@ try {
 
 //----------------------------------------------------------------
 // 1.3 Class Hoisting
-console.log('1.3 Class declaration hoisting');
+console.log('\n1.3 Class declaration hoisting');
 
 try {
     var Frodo = new Hobbit();
@@ -89,8 +89,8 @@ try {
 // 2. Equality Operators
 //----------------------------------------------------------------
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality
-console.log('2. Equality Operators');
-console.log('2.1 Double Equality Operators');
+console.log('\n2. Equality Operators');
+console.log('2.1 Loose Equality Operators');
 // Detail: https://262.ecma-international.org/5.1/#sec-11.9.3
 
 // Primitive data types
@@ -108,8 +108,8 @@ console.log('undefined == undefined ->', undefined == undefined);
 console.log('undefined == null ->', undefined == null);
 
 // abstract data types
-console.log(`[] == false ->`, []== false); // true
-console.log(`{} == false ->`, {} == false); // false
+console.log(`[] == false ->`, []== false);
+console.log(`{} == false ->`, {} == false);
 
 const obj = {a:1};
 const sameValueObj = {a:1};
@@ -130,9 +130,15 @@ console.log('NaN == NaN ->', NaN == NaN);
 console.log('Infinity == Infinity ->', Infinity == Infinity);
 console.log(`1/0 == Infinity ->`, 1/0 == Infinity);
 
+console.log('\n2.2 Strict equality operator');
+console.log(`'7' - 7 === '0' ->`,'7' - 7 === '0');
+console.log(`Number('7') - 7 === 0 ->`,Number('7') - 7 === 0);
+console.log(`0 === '' ->`, 0 === '');
+console.log(`null === undefined -> `, null === undefined);
+
 // 3. Logical Operators
 //----------------------------------------------------------------
-console.log('3. Logical Operators');
+console.log('\n3. Logical Operators');
 
 console.log(console.log(1) && console.log(2)); // 1 & undefined
 let age = 30;
