@@ -1,3 +1,6 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-alert */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-useless-concat */
@@ -157,19 +160,30 @@ if (money) {
     console.log('You should get a job!');
 }
 
-// 9. Logical Operators
-// https://javascript.info/logical-operators
+// 9. LECTURE: Equality Operators: == vs. ===
 //----------------------------------------------------------------
-console.log('9. Logical Operators');
+console.log('9. Equality Operators');
+
+const prompt = require('prompt-sync')();
+
+const numNeighbours = Number(prompt('How manu neighbour countries does your country have? '));
+if (numNeighbours === 1) console.log('Only 1 border!');
+else if (numNeighbours > 1) console.log('More than one border');
+else console.log('No borders');
+
+// 10. Logical Operators
+//----------------------------------------------------------------
+// https://javascript.info/logical-operators
+console.log('10. Logical Operators');
 // Note: ! > && > ||
 
-console.log('9.1 !(NOT)');
+console.log('10.1 !(NOT)');
 
 console.log(null);
 console.log(!null);
 console.log(!!null);
 
-console.log('9.2 && (AND)');
+console.log('10.2 && (AND)');
 console.log(1 && 2 && null && 3);
 console.log(1 && 2 && 3);
 
@@ -179,7 +193,7 @@ const person = {
 };
 console.log(person.age > 18 && `${person.name} is allowed driving`);
 
-console.log('9.3 || (OR)');
+console.log('10.3 || (OR)');
 console.log(undefined || null || 0);
 console.log(null || (2 && 3) || 4);
 
@@ -193,6 +207,5 @@ console.log(person.job || 'unemployed');
 
 // NOTE: Don’t replace if with || or &&
 const x = 1;
-
 x > 0 && console.log('Greater than zero!'); // "shorter way to write if".
 if (x > 0) console.log('Greater than zero!'); // IF is more obvious and tends to be a little bit more readable.
