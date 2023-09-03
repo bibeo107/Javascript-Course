@@ -166,7 +166,8 @@ console.log('9. Equality Operators');
 
 const prompt = require('prompt-sync')();
 
-const numNeighbours = Number(prompt('How manu neighbour countries does your country have? '));
+// const numNeighbours = Number(prompt('How many neighbour countries does your country have? '));
+const numNeighbours = 5;
 if (numNeighbours === 1) console.log('Only 1 border!');
 else if (numNeighbours > 1) console.log('More than one border');
 else console.log('No borders');
@@ -209,3 +210,10 @@ console.log(person.job || 'unemployed');
 const x = 1;
 x > 0 && console.log('Greater than zero!'); // "shorter way to write if".
 if (x > 0) console.log('Greater than zero!'); // IF is more obvious and tends to be a little bit more readable.
+
+//----------------------------------------------------------------
+if ( language === 'english' && population < 50 && !isIsland){
+    console.log(`You should live in ${country}`);
+} else {
+    console.log(`${country} does not meet your criteria`);
+}
