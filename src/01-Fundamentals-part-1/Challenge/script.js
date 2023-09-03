@@ -28,3 +28,18 @@ if (BMIMark > BMIJohn) {
 } else {
     console.log(`John's BMI ${BMIJohn} is higher than Mark's ${BMIMark}!`);
 }
+
+//----------------------------------------------------------------
+// Chanllege 3
+
+const scroreDolphins = (96 + 108 + 89) / 3;
+const scroreKoalas = (88 + 91 + 110) / 3;
+console.log(scroreDolphins, scroreKoalas);
+
+if (scroreDolphins === scroreKoalas && scroreKoalas >= 100 && scroreDolphins >= 100) {
+    console.log('Both win the trophy');
+} else if (scroreDolphins > scroreKoalas && scroreDolphins >= 100) {
+    console.log('Dolphins win the trophy ');
+} else if (scroreKoalas > scroreDolphins && scroreKoalas >= 100) {
+    console.log('Koalas win the trophy');
+} else console.log('No team wins the trophy');
