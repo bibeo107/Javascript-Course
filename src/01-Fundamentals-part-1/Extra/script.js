@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 /* eslint-disable no-compare-neg-zero */
 /* eslint-disable no-new-wrappers */
 /* eslint-disable no-self-compare */
@@ -15,9 +16,10 @@
 // 1. Hoisting in JavaScript allows you to access functions and variables before they have been created.
 // ----------------------------------------------------------------
 
-console.log('1. Hoisting in JavaScript');
-// 1.1  Variale Hoisting
-console.log('1.2 Variable Hoisting ');
+console.log(`
+1. Hoisting in JavaScript`);
+console.log(`
+1.1 Variable Hoisting`);
 console.log(bar);
 var bar = 1;
 
@@ -35,8 +37,8 @@ try {
 }
 
 //----------------------------------------------------------------
-// 1.2 Function Hoisting
-console.log('\n1.2 Hoisting function declarations');
+console.log(`
+1.2 Hoisting function declarations`);
 
 console.log(square(5));
 
@@ -64,8 +66,8 @@ try {
 }
 
 //----------------------------------------------------------------
-// 1.3 Class Hoisting
-console.log('\n1.3 Class declaration hoisting');
+console.log(`
+1.3 Class declaration hoisting`);
 
 try {
     var Frodo = new Hobbit();
@@ -85,12 +87,12 @@ try {
 
 //----------------------------------------------------------------
 // Import Hoisting
-
-// 2. Equality Operators
 //----------------------------------------------------------------
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality
-console.log('\n2. Equality Operators');
-console.log('2.1 Loose Equality Operators');
+console.log(`
+2. Equality Operators`);
+console.log(`
+2.1 Loose Equality Operators`);
 // Detail: https://262.ecma-international.org/5.1/#sec-11.9.3
 
 // Primitive data types
@@ -130,16 +132,16 @@ console.log('NaN == NaN ->', NaN == NaN);
 console.log('Infinity == Infinity ->', Infinity == Infinity);
 console.log(`1/0 == Infinity ->`, 1/0 == Infinity);
 
-console.log('\n2.2 Strict equality operator');
+console.log(`
+2.2 Strict equality operator`);
 console.log(`'7' - 7 === '0' ->`,'7' - 7 === '0');
 console.log(`Number('7') - 7 === 0 ->`,Number('7') - 7 === 0);
 console.log(`0 === '' ->`, 0 === '');
 console.log(`null === undefined -> `, null === undefined);
 
-// 3. Logical Operators
 //----------------------------------------------------------------
-console.log('\n3. Logical Operators');
-
+console.log(`
+3. Logical Operators`);
 console.log(console.log(1) && console.log(2)); // 1 & undefined
 let age = 30;
 // Write an if condition to check that age is between 14 and 90 inclusively.
@@ -185,3 +187,41 @@ if (visitor === 'Admin') {
 } else if (visitor === '' || visitor === null) {
     console.log('Canceled');
 } else console.log("I don't know you");
+
+//----------------------------------------------------------------
+console.log(`
+4. Switch statement`);
+
+// Use switch
+const drinkName = 'Mocha';
+
+switch (drinkName) {
+case 'Americano':
+    console.log('The price of this drink is $2.60');
+    break;
+case 'Cappuccino':
+    console.log('The price of this drink is $2.75');
+    break;
+case 'Latte':
+case 'Mocha':
+case 'Macchiato':
+    console.log('The price of this drink is $3.00');
+    break;
+case 'Espresso':
+    console.log('The price of this drink is $2.40');
+    break;
+default:
+    console.log('This drink is not available');
+}
+
+// Use object lookup instead
+const drinkPrices = {
+    'Americano': 'The price of this drink is $2.60',
+    'Cappuccino': 'The price of this drink is $2.75',
+    'Latte': 'The price of this drink is $3.00',
+    'Mocha': 'The price of this drink is $3.00',
+    'Macchiato': 'The price of this drink is $3.00',
+    'Espresso': 'The price of this drink is $2.40'
+};
+
+console.log(drinkPrices[drinkName] || 'This drink is not available');
