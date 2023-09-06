@@ -2,7 +2,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-alert */
 /* eslint-disable no-unused-expressions */
-/* eslint-disable prettier/prettier */
 /* eslint-disable no-useless-concat */
 /* eslint-disable prefer-template */
 // 1. Lecture values and variables
@@ -155,7 +154,7 @@ console.log(Boolean({}));
 
 const money = 0;
 if (money) {
-    console.log('Don\'t spend it all;');
+    console.log("Don't spend it all;");
 } else {
     console.log('You should get a job!');
 }
@@ -212,7 +211,7 @@ x > 0 && console.log('Greater than zero!'); // "shorter way to write if".
 if (x > 0) console.log('Greater than zero!'); // IF is more obvious and tends to be a little bit more readable.
 
 //----------------------------------------------------------------
-if ( language === 'english' && population < 50 && !isIsland){
+if (language === 'english' && population < 50 && !isIsland) {
     console.log(`You should live in ${country}`);
 } else {
     console.log(`${country} does not meet your criteria`);
@@ -225,23 +224,48 @@ console.log(`
 language = 'english';
 let text;
 switch (language) {
-case 'chinese':
-case 'mandarin':
-    text = 'MOST number of native speakers!';
-    break;
-case 'spanish':
-    text = '2nd place in number of native speakers';
-    break;
-case 'english':
-    text = '3rd place';
-    break;
-case 'hindi':
-    text = 'Number 4';
-    break;
-case 'arabic':
-    text = '5th most spoken language';
-    break;
-default:
-    text = 'Great language too :D';
+    case 'chinese':
+    case 'mandarin':
+        text = 'MOST number of native speakers!';
+        break;
+    case 'spanish':
+        text = '2nd place in number of native speakers';
+        break;
+    case 'english':
+        text = '3rd place';
+        break;
+    case 'hindi':
+        text = 'Number 4';
+        break;
+    case 'arabic':
+        text = '5th most spoken language';
+        break;
+    default:
+        text = 'Great language too :D';
 }
 console.log(text);
+
+//----------------------------------------------------------------
+console.log(`
+12. Expressions vs statements`);
+/*
+Expressions => return a value
+Statements => complete task instruction.
+*/
+let a;
+const b = 7;
+
+console.log('12.1 Expressions');
+console.log('1 + 1; ');
+console.log(`'Hello' + ' ' + 'World';`);
+console.log('a===20 && b===30');
+console.log(`'hello world';`);
+console.log('Object.assign({}, { answer: 42 })');
+console.log('b >= 0 ? b*2 : b ->', b >= 0 ? b * 2 : b); // expression - ternary operator
+
+// statement
+if (b >= 0) {
+    a = b * 2;
+} else {
+    a = b;
+}
