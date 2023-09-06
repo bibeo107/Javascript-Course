@@ -12,6 +12,7 @@
     "rules": {
         "linebreak-style": ["error", "unix"],
         "semi": ["error", "always"],
+        "indent": ["error", 4, {"SwitchCase": 1}],
         "prettier/prettier": ["error", { "singleQuote": true }],
         "no-console": "off",
         "no-unused-vars": 0,
