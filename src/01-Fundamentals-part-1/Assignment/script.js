@@ -245,3 +245,28 @@ default:
     text = 'Great language too :D';
 }
 console.log(text);
+
+//----------------------------------------------------------------
+console.log(`
+12. Expressions vs statements`);
+/*
+Expressions => return a value
+Statements => complete task instruction.
+*/
+let a;
+const b = 7;
+
+console.log(`12.1 Expressions`);
+console.log(`1 + 1; `);
+console.log(`'Hello' + ' ' + 'World';`);
+console.log('a===20 && b===30');
+console.log(`'hello world';`);
+console.log(`Object.assign({}, { answer: 42 })`);
+console.log(`b >= 0 ? b*2 : b ->`, b >= 0 ? b*2 : b );// expression - ternary operator
+
+// statement
+if (b >= 0) {
+    a = b * 2;
+} else {
+    a = b;
+}
