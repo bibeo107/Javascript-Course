@@ -110,32 +110,32 @@ console.log('undefined == undefined ->', undefined == undefined);
 console.log('undefined == null ->', undefined == null);
 
 // abstract data types
-console.log(`[] == false ->`, []== false);
+console.log(`[] == false ->`, [] == false);
 console.log(`{} == false ->`, {} == false);
 
-const obj = {a:1};
-const sameValueObj = {a:1};
+const obj = { a: 1 };
+const sameValueObj = { a: 1 };
 const arr = [1];
 const sameValueArr = [1];
-const func = function(){};
-const sameValueFunc = function(){};
+const func = function () {};
+const sameValueFunc = function () {};
 
 console.log('obj == obj ->', obj == obj);
 console.log('obj == sameValueObj ->', obj == sameValueObj);
 console.log('arr == arr ->', arr == arr);
 console.log('arr == sameValueArr ->', arr == sameValueArr);
-console.log('func == func ->', func == func );
-console.log('func == sameValueFunc ->', func == sameValueFunc );
+console.log('func == func ->', func == func);
+console.log('func == sameValueFunc ->', func == sameValueFunc);
 
 // special case
 console.log('NaN == NaN ->', NaN == NaN);
 console.log('Infinity == Infinity ->', Infinity == Infinity);
-console.log(`1/0 == Infinity ->`, 1/0 == Infinity);
+console.log(`1/0 == Infinity ->`, 1 / 0 == Infinity);
 
 console.log(`
 2.2 Strict equality operator`);
-console.log(`'7' - 7 === '0' ->`,'7' - 7 === '0');
-console.log(`Number('7') - 7 === 0 ->`,Number('7') - 7 === 0);
+console.log(`'7' - 7 === '0' ->`, '7' - 7 === '0');
+console.log(`Number('7') - 7 === 0 ->`, Number('7') - 7 === 0);
 console.log(`0 === '' ->`, 0 === '');
 console.log(`null === undefined -> `, null === undefined);
 
@@ -196,32 +196,32 @@ console.log(`
 const drinkName = 'Mocha';
 
 switch (drinkName) {
-case 'Americano':
-    console.log('The price of this drink is $2.60');
-    break;
-case 'Cappuccino':
-    console.log('The price of this drink is $2.75');
-    break;
-case 'Latte':
-case 'Mocha':
-case 'Macchiato':
-    console.log('The price of this drink is $3.00');
-    break;
-case 'Espresso':
-    console.log('The price of this drink is $2.40');
-    break;
-default:
-    console.log('This drink is not available');
+    case 'Americano':
+        console.log('The price of this drink is $2.60');
+        break;
+    case 'Cappuccino':
+        console.log('The price of this drink is $2.75');
+        break;
+    case 'Latte':
+    case 'Mocha':
+    case 'Macchiato':
+        console.log('The price of this drink is $3.00');
+        break;
+    case 'Espresso':
+        console.log('The price of this drink is $2.40');
+        break;
+    default:
+        console.log('This drink is not available');
 }
 
 // Use object lookup instead
 const drinkPrices = {
-    'Americano': 'The price of this drink is $2.60',
-    'Cappuccino': 'The price of this drink is $2.75',
-    'Latte': 'The price of this drink is $3.00',
-    'Mocha': 'The price of this drink is $3.00',
-    'Macchiato': 'The price of this drink is $3.00',
-    'Espresso': 'The price of this drink is $2.40'
+    Americano: 'The price of this drink is $2.60',
+    Cappuccino: 'The price of this drink is $2.75',
+    Latte: 'The price of this drink is $3.00',
+    Mocha: 'The price of this drink is $3.00',
+    Macchiato: 'The price of this drink is $3.00',
+    Espresso: 'The price of this drink is $2.40'
 };
 
 console.log(drinkPrices[drinkName] || 'This drink is not available');

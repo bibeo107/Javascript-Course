@@ -197,13 +197,16 @@ console.log('10.3 || (OR)');
 console.log(undefined || null || 0);
 console.log(null || (2 && 3) || 4);
 
-// 1. Getting the first truthy value from a list of variables or expressions.
+// OR Getting the first truthy value from a list of variables or expressions.
 const fullName = '';
 const nickName = 'Coder';
 console.log(fullName || nickName || 'Anonymous');
 
-// 2. Short-circuit evaluation.
+// Short-circuit evaluation.
 console.log(person.job || 'unemployed');
+const str = 'Hello World!';
+const search = 'World';
+console.log(search != null && str.toLowerCase().includes(search.toLowerCase()) && 'Found');
 
 // NOTE: Don’t replace if with || or &&
 const x = 1;
