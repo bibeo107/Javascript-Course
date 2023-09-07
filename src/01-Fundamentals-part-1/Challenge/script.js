@@ -43,3 +43,8 @@ if (scroreDolphins === scroreKoalas && scroreKoalas >= 100 && scroreDolphins >= 
 } else if (scroreKoalas > scroreDolphins && scroreKoalas >= 100) {
     console.log('Koalas win the trophy');
 } else console.log('No team wins the trophy');
+
+// Challenge 4
+const bill = 275;
+const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
