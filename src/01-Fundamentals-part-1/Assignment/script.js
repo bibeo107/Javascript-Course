@@ -10,8 +10,6 @@ console.log(' 1. Lecture values and variables');
 const country = 'Vietnam';
 const continent = 'Asia';
 let population = 97.47; // million
-// const population = 13; // million
-// const population = 130; // million
 
 console.log(country);
 console.log(continent);
@@ -221,6 +219,7 @@ if (language === 'english' && population < 50 && !isIsland) {
 }
 
 // Lecture: the switch statement
+//--------------------------------------------------------
 console.log(`
 11. Switch statement`);
 
@@ -288,3 +287,51 @@ console.log(welcomeMessage('Bi Beo'));
 population = 13;
 const msg = population > 33 ? 'above average' : 'below avarage';
 console.log(`${country}'s population ${msg}`);
+
+//------------------------------------------------------------------------------
+console.log(`
+Challenge 1`);
+const massMark = 95;
+const heightMark = 1.88;
+const massJohn = 85;
+const heightJohn = 1.76;
+
+const BMIMark = massMark / heightMark ** 2;
+const BMIJohn = massJohn / heightJohn ** heightJohn;
+
+console.log('BMIMark ', BMIMark);
+console.log('BMIJohn ', BMIJohn);
+
+const markHeigherBMI = BMIMark > BMIJohn;
+console.log('Mark has a higher BMI than John ', markHeigherBMI);
+
+// --------------------------------------------------------
+console.log(`
+Challenge 2`);
+if (BMIMark > BMIJohn) {
+    console.log(`Mark's BMI ${BMIMark} is higher than John's ${BMIJohn}!`);
+} else {
+    console.log(`John's BMI ${BMIJohn} is higher than Mark's ${BMIMark}!`);
+}
+
+// ----------------------------------------------------------------
+console.log(`
+Challenge 3`);
+const scroreDolphins = (96 + 108 + 89) / 3;
+const scroreKoalas = (88 + 91 + 110) / 3;
+console.log(scroreDolphins, scroreKoalas);
+
+if (scroreDolphins === scroreKoalas && scroreKoalas >= 100 && scroreDolphins >= 100) {
+    console.log('Both win the trophy');
+} else if (scroreDolphins > scroreKoalas && scroreDolphins >= 100) {
+    console.log('Dolphins win the trophy ');
+} else if (scroreKoalas > scroreDolphins && scroreKoalas >= 100) {
+    console.log('Koalas win the trophy');
+} else console.log('No team wins the trophy');
+
+//----------------------------------------------------------------
+console.log(`
+Challenge 4`);
+const bill = 275;
+const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);

@@ -1,17 +1,9 @@
-/* eslint-disable default-case */
 /* eslint-disable no-compare-neg-zero */
-/* eslint-disable no-new-wrappers */
-/* eslint-disable no-self-compare */
-/* eslint-disable quotes */
-/* eslint-disable use-isnan */
-/* eslint-disable yoda */
 /* eslint-disable eqeqeq */
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable prefer-const */
+/* eslint-disable no-self-compare */
+/* eslint-disable use-isnan */
 /* eslint-disable no-var */
 /* eslint-disable vars-on-top */
-/* eslint-disable no-undef */
-/* eslint-disable prettier/prettier */
 
 // 1. Hoisting in JavaScript allows you to access functions and variables before they have been created.
 // ----------------------------------------------------------------
@@ -70,7 +62,7 @@ console.log(`
 1.3 Class declaration hoisting`);
 
 try {
-    var Frodo = new Hobbit();
+    const Frodo = new Hobbit();
     Frodo.height = 100;
     Frodo.weight = 300;
     console.log(Frodo);
@@ -98,7 +90,7 @@ console.log(`
 // Primitive data types
 console.log('0 == -0 ->', 0 == -0);
 console.log('1 == -1 ->', 1 == -1);
-console.log(`'hello' == 'Hello' ->`, 'hello' == 'Hello');
+console.log(`'hello' == 'Hello' ->`, 'hello' === 'Hello');
 console.log(`Symbol('id') == Symbol('id') ->`, Symbol('id') == Symbol('id'));
 
 // Note: falsy comparison -> false, 0, and '' are loosely equal
@@ -137,7 +129,7 @@ console.log(`
 console.log(`'7' - 7 === '0' ->`, '7' - 7 === '0');
 console.log(`Number('7') - 7 === 0 ->`, Number('7') - 7 === 0);
 console.log(`0 === '' ->`, 0 === '');
-console.log(`null === undefined -> `, null === undefined);
+console.log(`null === undefined -> `, undefined === null);
 
 //----------------------------------------------------------------
 console.log(`
@@ -154,6 +146,8 @@ if (!(age >= 14 && age <= 90))
 if (age < 14 || age > 90) console.log('Use OR operator: age is NOT between 14 and 90 inclusively.');
 
 //----------------------------------------------------------------
+console.log(`
+Task: check drive`);
 const hasDriversLicense = true;
 const hasGoodVision = true;
 const isTired = true;
@@ -165,22 +159,16 @@ if (hasDriversLicense && hasGoodVision && !isTired) {
 }
 
 //----------------------------------------------------------------
-/* Task: Check the login
-Write the code which asks for a login with prompt.
-If the visitor enters "Admin", then prompt for a password, if the input is an empty line or Esc – show “Canceled”, if it’s another string – then show “I don’t know you”.
-The password is checked as follows:
-    + If it equals “TheMaster”, then show “Welcome!”,
-    + Another string – show “Wrong password”,
-    + For an empty string or cancelled input, show “Canceled”
-*/
+console.log(`
+Task: Check the login`);
 
 const prompt = require('prompt-sync')();
 
 // let visitor = prompt('please enter who\'s are you');
-let visitor = ''; // skip prompt() enter visitor
+const visitor = ''; // skip prompt() enter visitor
 
 if (visitor === 'Admin') {
-    let password = prompt('please enter your password');
+    const password = prompt('please enter your password');
     if (password === '' || password === null) console.log('Canceled');
     else if (password === 'TheMaster') console.log('Welcome!');
     else console.log('Wrong password');
