@@ -9,7 +9,7 @@
 console.log(' 1. Lecture values and variables');
 const country = 'Vietnam';
 const continent = 'Asia';
-const population = 97.47; // million
+let population = 97.47; // million
 // const population = 13; // million
 // const population = 130; // million
 
@@ -269,3 +269,19 @@ if (b >= 0) {
 } else {
     a = b;
 }
+
+//----------------------------------------------------------------
+console.log(`
+Ternary operator`);
+
+const user = 'Bi';
+const message = user ? `Welcome, ${user}!` : 'Welcome, Guest';
+console.log(message);
+
+const welcomeMessage = (learner) => (learner ? `Welcome, ${learner}!` : 'Welcome, Guest');
+console.log(welcomeMessage());
+console.log(welcomeMessage('Bi Beo'));
+
+population = 13;
+const msg = population > 33 ? 'above average' : 'below avarage';
+console.log(`${country}'s population ${msg}`);
