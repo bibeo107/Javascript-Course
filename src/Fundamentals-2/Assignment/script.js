@@ -117,11 +117,11 @@ const checkWinner = (avgDolphins, avgKoalas) => {
 };
 
 // DATA1
-// const scroreDolphins = calcAverage(44, 23, 71);
-// const scroreKoalas = calcAverage (65, 54, 49);
+let scroreDolphins = calcAverage(44, 23, 71);
+let scroreKoalas = calcAverage(65, 54, 49);
+checkWinner(scroreDolphins, scroreKoalas);
 
 // DATA2
-const scroreDolphins = calcAverage(85, 54, 41);
-const scroreKoalas = calcAverage(23, 34, 27);
-
+scroreDolphins = calcAverage(85, 54, 41);
+scroreKoalas = calcAverage(23, 34, 27);
 checkWinner(scroreDolphins, scroreKoalas);
