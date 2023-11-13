@@ -227,6 +227,34 @@ console.log(
 console.log(`fruits:`, fruits);
 
 //-------------------------------------
+console.log(
+    `\x1b[1m%s\x1b[0m`,
+    `\n array.toSpliced() ---------------------------------------------`
+);
+
+const firstNames = ['Vu', 'Van', 'Vo', ' Vuong'];
+
+console.log(`\x1b[1m%s\x1b[0m`, `Inserting an element at index 1`);
+console.log(`firstNames`, firstNames);
+console.log(`firstNames.toSpliced(1, 0, 'Nguyen')`, firstNames.toSpliced(1, 0, 'Nguyen'));
+
+console.log(`\x1b[1m%s\x1b[0m`, `\nDeleting two elements starting from index 2`);
+console.log(`firstNames`, firstNames);
+const modifiedNames = firstNames.toSpliced(2, 2);
+console.log(`firstNames.toSpliced(2, 2)`, modifiedNames);
+
+const lastNames = ['Thuy', 'Thu', 'Thang'];
+console.log(`lastNames`, lastNames);
+console.log(`lastNames.toSpliced(2, 2)`, lastNames.toSpliced(2, 2));
+
+console.log(`\x1b[1m%s\x1b[0m`, `\nReplacing one element at index 1 with two new elements`);
+console.log(`firstNames`, firstNames);
+console.log(
+    `firstNames.toSpliced(1, 1, 'Hoang', 'Pham')`,
+    firstNames.toSpliced(1, 1, 'Hoang', 'Pham')
+);
+
+//-------------------------------------
 console.log(`\x1b[1m%s\x1b[0m`, `\n Array.at() ---------------------------------------------`);
 
 const array = [1, 2, 'three', 4, 5, false];
