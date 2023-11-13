@@ -7,11 +7,18 @@ console.log(
     `\x1b[1m%s\x1b[0m`,
     `\n------------------------------ Lecture: Array ------------------------------`
 );
-console.log(`\x1b[1m%s\x1b[0m`, `Create array using split`);
+console.log(`\x1b[1m%s\x1b[0m`, `Create array from string using split()`);
 
 const fruitString = 'apple, banana, lemon, lime, pear, coconut';
 console.log(`fruitString:`, fruitString);
 console.log(`fruitString.split(','):`, fruitString.split(','));
+
+console.log(`\x1b[1m%s\x1b[0m`, `\n array.join() ---------------------------------------------`);
+const animals = ['Lion', 'Tiger', 'Koala', 'Dophin'];
+console.log(`animals.join():`, animals.join());
+console.log(`animals.join(''):`, animals.join(''));
+console.log(`animals.join(', '):`, animals.join(', '));
+console.log(`animals.join('-'):`, animals.join('-'));
 
 // push & pop like LIFO ---------------------------------------------------
 console.log(`\x1b[1m%s\x1b[0m`, `\n array.push() ---------------------------------------------`);
@@ -98,7 +105,7 @@ console.log(
 );
 console.log(`fruits:`, fruits);
 
-/// / start >= array.length, no element will be deleted, but the method will behave as an adding function, adding as many elements as provided.
+// start >= array.length, no element will be deleted, but the method will behave as an adding function, adding as many elements as provided.
 const extendedArrayLength = fruits.length + 1;
 console.log(
     `fruits.splice(fruits.length + 1, 1, 'Lemon', 'Lime')`,
