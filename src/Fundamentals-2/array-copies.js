@@ -7,6 +7,18 @@ const [changed, notChanged] = [
 const isChanged = (a, b) => {
     return JSON.stringify(a) === JSON.stringify(b) ? changed : notChanged;
 };
+
+const lastNameCoworkers = ['Quan', 'Tien', 'Tien', 'Thao', 'Thao'];
+const fullNameCoworkers = [
+    { firstName: 'Vo', lastName: 'Quan' },
+    { firstName: 'Vo', lastName: 'Tien' },
+    { firstName: 'Tran', lastName: 'Tien' },
+    { firstName: 'Vu', lastName: 'Thao' },
+    { firstName: 'Pham', lastName: 'Thao' }
+];
+const uniqueLatNameCoworkers = new Set(lastNameCoworkers);
+const uniqueFullnameCoworkers = new Set(fullNameCoworkers);
+
 // Spead operator----------------------------------------------------
 console.log(`\x1b[1m%s\x1b[0m`, `Spead operator ---------------`);
 // It's fine.
@@ -27,6 +39,9 @@ console.log(`copyOfPeople[0].role = `, (copyOfUsers[0].role = 'assessor'));
 console.log(`copyOfUsers:`, copyOfUsers);
 console.log(`users:`, users);
 console.log(isChanged(users, copyOfUsers));
+
+console.log(`\nuniqueLastNameCoworkers: `, uniqueLatNameCoworkers);
+console.log(`[...uniqueLatNameCoworkers]: `, [...uniqueLatNameCoworkers]);
 
 // array.map()----------------------------------------------------
 // It's fine
@@ -54,6 +69,19 @@ console.log(isChanged(favoriteFruits, copyOfFavoriteFruits));
 // array.from()----------------------------------------------------
 console.log(`\x1b[1m%s\x1b[0m`, `\n Array.from() ---------------`);
 console.log(`Array.from('PHP'):`, Array.from('PHP'));
+
+// array from set
+console.log(`\nuniqueLNCoworkers `, uniqueLatNameCoworkers);
+console.log(`Array.from(uniqueLatNameCoworkers) `, Array.from(uniqueLatNameCoworkers));
+
+// array from map
+const contacts = new Map();
+contacts.set('Jessie', { phone: '213-555-1234', address: '123 N 1st Ave' });
+contacts.set('Hilary', { phone: '617-555-4321', address: '321 S 2nd St' });
+console.log(`\ncontacts: `, contacts);
+console.log(`Array.from(contacts):`, Array.from(contacts));
+console.log(`Array.from(contacts.keys):`, Array.from(contacts.keys()));
+console.log(`Array.from(contacts.values):`, Array.from(contacts.values()));
 
 const shapes = ['circle', 'square'];
 const copyOfShapes = Array.from(shapes);
