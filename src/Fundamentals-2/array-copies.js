@@ -1,32 +1,32 @@
 /* eslint-disable no-param-reassign */
-let isChanged;
 const [changed, notChanged] = [
     'The original array has been changed',
     'The original array has NOT been changed'
 ];
 
+const isChanged = (a, b) => {
+    return JSON.stringify(a) === JSON.stringify(b) ? changed : notChanged;
+};
 // Spead operator----------------------------------------------------
 console.log(`\x1b[1m%s\x1b[0m`, `Spead operator ---------------`);
 // It's fine.
 const people = ['admin', 'tutor', 'author'];
 const copyOfPeople = [...people];
-
 console.log('copyOfPeople:', copyOfPeople);
 console.log(`copyOfPeople[0] = `, (copyOfPeople[0] = 'assessor'));
 console.log('copyOfPeople:', copyOfPeople);
 console.log('people:', people);
-isChanged = people[0] === copyOfPeople[0] ? changed : notChanged;
-console.log(isChanged);
+console.log(isChanged(people, copyOfPeople));
 
 // It's Shallow copy.
 const users = [{ role: 'admin' }, { role: 'tutor' }, { role: 'author' }];
 const copyOfUsers = [...users];
-console.log(`\ncopyOfUsers:`, copyOfUsers);
+console.log(`\nusers:`, copyOfUsers);
+console.log(`copyOfUsers:`, copyOfUsers);
 console.log(`copyOfPeople[0].role = `, (copyOfUsers[0].role = 'assessor'));
 console.log(`copyOfUsers:`, copyOfUsers);
 console.log(`users:`, users);
-isChanged = users[0].role === copyOfUsers[0].role ? changed : notChanged;
-console.log(isChanged);
+console.log(isChanged(users, copyOfUsers));
 
 // array.map()----------------------------------------------------
 // It's fine
@@ -38,9 +38,7 @@ const copyOfFruits = fruits.map((e) => {
 });
 console.log(`copyOfFruits:`, copyOfFruits);
 console.log(`fruits:`, fruits);
-
-isChanged = fruits[0] === copyOfFruits[0] ? changed : notChanged;
-console.log(isChanged);
+console.log(isChanged(fruits, copyOfFruits));
 
 //--------------------------
 const favoriteFruits = [{ name: 'apple' }, { name: 'lemon' }, { name: 'kiwi' }];
@@ -51,27 +49,54 @@ const copyOfFavoriteFruits = favoriteFruits.map((element) => {
 });
 console.log(`copyOfFavoriteFruits:`, copyOfFavoriteFruits);
 console.log(`favoriteFruits:`, favoriteFruits);
-
-isChanged = favoriteFruits[0].name === copyOfFavoriteFruits[0].name ? changed : notChanged;
-console.log(isChanged);
+console.log(isChanged(favoriteFruits, copyOfFavoriteFruits));
 
 // array.from()----------------------------------------------------
 console.log(`\x1b[1m%s\x1b[0m`, `\n Array.from() ---------------`);
-const newArray = Array.from('PHP');
-console.log(`Array.from('Javascript'):`, newArray);
+console.log(`Array.from('PHP'):`, Array.from('PHP'));
 
-const shapes = ['circle', 'rectangle', 'square'];
+const shapes = ['circle', 'square'];
 const copyOfShapes = Array.from(shapes);
+console.log(`\nshapes:`, shapes);
 console.log(`copyOfShapes:`, copyOfShapes);
+console.log(`copyOfShapes[0] = 'Oval':`, (copyOfShapes[0] = 'Oval'));
+console.log(`copyOfShapes:`, copyOfShapes);
+console.log(`shapes:`, shapes);
+console.log(isChanged(shapes, copyOfShapes));
 
-console.log(Array.from({ length: 4 }, (value, index) => value));
-console.log(Array.from([2, 3, 4], (value, index) => value * index));
-console.log(Array.from({ length: 4 }, (value, index) => index));
-console.log(Array.from({ length: 4 }, (value, index) => index * 2));
+const originalUsers = [
+    { id: 1, name: 'Alice' },
+    { id: 2, name: 'Bob' }
+];
+const copyUsers = Array.from(originalUsers);
+console.log(`\noriginalUsers`, originalUsers);
+console.log(`copyUsers`, copyUsers);
+console.log(`copyUsers[0].name = 'Rachel':`, (copyUsers[0].name = 'Rachel')); // Modify the copy (simulating a change)
+console.log('copyUsers:', copyUsers);
+console.log('originalUsers:', originalUsers);
+console.log(isChanged(originalUsers, copyUsers));
+
+console.log(Array.from({ length: 4 }, (value, i) => i));
+console.log(Array.from({ length: 4 }, (_, i) => i * 2));
+// Create a Sequence of Numbers
+const range = (start, end, step = 1) =>
+    Array.from({ length: (end - start) / step + 1 }, (_, i) => start + i * step);
+
+console.log(`\nrange(1, 10):`, range(1, 10));
+console.log(`\nrange(1, 10, 2):`, range(1, 10, 2));
+
+// Create the alphabet array & sort
+
+const alphabet = range('A'.charCodeAt(0), 'Z'.charCodeAt(0)).map((x) => String.fromCharCode(x));
+console.log(`\nCreate the alphabet array & sort:`, alphabet);
 
 // array.slice()
 
 // array.concat();
+
+// array.filter
+
+// array.reduce
 
 // deepcopy
 // const fruitsDeepCopy = JSON.parse(JSON.stringify(fruits));
