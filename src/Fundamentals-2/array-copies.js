@@ -9,8 +9,8 @@ const isChanged = (a, b) => {
 };
 
 // Spead operator----------------------------------------------------
-console.log(`\x1b[1m%s\x1b[0m`, `Spead operator ---------------`);
-// It's fine.
+console.group(`\x1b[1m%s\x1b[0m`, `Spead operator ---------------`);
+//
 const people = ['admin', 'tutor', 'author'];
 const copyOfPeople = [...people];
 console.log('copyOfPeople:', copyOfPeople);
@@ -18,8 +18,7 @@ copyOfPeople[0] = 'assessor';
 console.log('copyOfPeople:', copyOfPeople);
 console.log('people:', people);
 console.log(isChanged(people, copyOfPeople));
-
-// It's Shallow copy.
+//
 const users = [{ role: 'admin' }, { role: 'tutor' }, { role: 'author' }];
 const copyOfUsers = [...users];
 console.log(`\ncopyOfUsers:`, copyOfUsers);
@@ -27,10 +26,11 @@ copyOfUsers[0].role = 'assessor';
 console.log(`copyOfUsers:`, copyOfUsers);
 console.log(`users:`, users);
 console.log(isChanged(users, copyOfUsers));
+console.groupEnd();
 
 // array.map()----------------------------------------------------
 // It's fine
-console.log(`\x1b[1m%s\x1b[0m`, `\n Array.map() ---------------`);
+console.group(`\x1b[1m%s\x1b[0m`, `\n Array.map() ---------------`);
 const fruits = ['apple', 'lemon', 'kiwi'];
 const copyOfFruits = fruits.map((e) => e);
 console.log(`fruits:`, fruits);
@@ -46,9 +46,10 @@ const copyOfFavoriteFruits = favoriteFruits.map((element) => {
 console.log(`copyOfFavoriteFruits:`, copyOfFavoriteFruits);
 console.log(`favoriteFruits:`, favoriteFruits);
 console.log(isChanged(favoriteFruits, copyOfFavoriteFruits));
+console.groupEnd();
 
 // array.from()----------------------------------------------------
-console.log(`\x1b[1m%s\x1b[0m`, `\n Array.from() ---------------`);
+console.group(`\x1b[1m%s\x1b[0m`, `\n Array.from() ---------------`);
 const shapes = ['circle', 'square'];
 const copyOfShapes = Array.from(shapes);
 console.log(`copyOfShapes:`, copyOfShapes);
@@ -67,8 +68,25 @@ copyUsers[0].name = 'Rachel';
 console.log('copyUsers:', copyUsers);
 console.log('originalUsers:', originalUsers);
 console.log(isChanged(originalUsers, copyUsers));
+console.groupEnd();
 
-// array.slice()
+console.group(`\x1b[1m%s\x1b[0m`, `\n Array.slice()() ---------------`);
+const currencies = [
+    { code: 'USD', name: 'US Dollar', symbol: '$' },
+    { code: 'EUR', name: 'Euro', symbol: '€' },
+    { code: 'JPY', name: 'Japanese Yen', symbol: '¥' }
+];
+
+const copyCurrencies = currencies.slice(0);
+console.log(`\ncopyCurrencies: `, copyCurrencies);
+copyCurrencies[0].name = 'Dolar';
+console.log(`copyCurrencies: `, copyCurrencies);
+console.log(`currencies: `, currencies);
+console.log(isChanged(currencies, copyCurrencies));
+
+const anotherSliceCopy = currencies.slice();
+console.log('anotherSliceCopy: ', anotherSliceCopy);
+console.groupEnd();
 
 // array.concat();
 
