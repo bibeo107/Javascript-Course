@@ -7,7 +7,8 @@ const [changed, notChanged] = [
 const isChanged = (a, b) => {
     return JSON.stringify(a) === JSON.stringify(b) ? changed : notChanged;
 };
-
+// SHALLOW COPY
+console.group(`\x1b[1m%s\x1b[0m`, `SHALLOW COPY`);
 // Spead operator----------------------------------------------------
 console.group(`\x1b[1m%s\x1b[0m`, `Spead operator ---------------`);
 //
@@ -29,7 +30,6 @@ console.log(isChanged(users, copyOfUsers));
 console.groupEnd();
 
 // array.map()----------------------------------------------------
-// It's fine
 console.group(`\x1b[1m%s\x1b[0m`, `\n Array.map() ---------------`);
 const fruits = ['apple', 'lemon', 'kiwi'];
 const copyOfFruits = fruits.map((e) => e);
@@ -89,11 +89,33 @@ console.log('anotherSliceCopy: ', anotherSliceCopy);
 console.groupEnd();
 
 // array.concat();
+console.log(`\x1b[1m%s\x1b[0m`, `array.concat():`, fruits.concat());
 
-// array.filter
+console.groupEnd();
 
-// array.reduce
+// deep copy
+console.group(`\x1b[1m%s\x1b[0m`, `\n DEEP COPY`);
+const copyFruits = JSON.parse(JSON.stringify(fruits));
+console.log(`copyFruits:`, copyFruits);
+copyFruits.pop();
+console.log(`copyFruits`, copyFruits);
+console.log(`fruits`, fruits);
+console.log(isChanged(fruits, copyFruits));
 
-// deepcopy
-// const fruitsDeepCopy = JSON.parse(JSON.stringify(fruits));
+const deepCopyCurrencies = JSON.parse(JSON.stringify(currencies));
+console.log(`\ndeepCopyCurrencies:`, deepCopyCurrencies);
+deepCopyCurrencies.pop();
+console.log(`deepCopyCurrencies`, deepCopyCurrencies);
+console.log(`currencies`, currencies);
+console.log(isChanged(currencies, deepCopyCurrencies));
+console.groupEnd();
+
 // structuredClone()
+console.group(`\x1b[1m%s\x1b[0m`, `\n structuredClone(array)`);
+const deepCopy = structuredClone(currencies);
+console.log(`structuredClone`, deepCopy);
+deepCopy.pop();
+console.log(`structuredClone`, deepCopy);
+console.log(`currencies`, currencies);
+console.log(isChanged(currencies, deepCopyCurrencies));
+console.groupEnd();
