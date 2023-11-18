@@ -56,10 +56,9 @@ console.groupEnd();
 
 // 4. Write a JavaScript function to get the last element of an array. Passing the parameter 'n' will return the last 'n' elements of the array.
 
-// 3. Write a JavaScript function to get the first element of an array. Passing the parameter 'n' will return the first 'n' elements of the array.
 console.group(
     `\x1b[1m%s\x1b[0m`,
-    `\n3. Write a JavaScript function to get the first element of an array. Passing the parameter 'n' will return the first 'n' elements of the array.`
+    `\n4. Write a JavaScript function to get the last element of an array. Passing the parameter 'n' will return the last 'n' elements of the array.`
 );
 const lastElements = (array, n = 1) => {
     if (!Array.isArray(array) || array.length === 0) return [];
