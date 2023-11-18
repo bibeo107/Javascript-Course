@@ -86,3 +86,34 @@ const myColor = ['Red', 'Green', 'White', 'Black'];
 console.log(myColor.join(', '));
 console.log(myColor.join('-'));
 console.log(myColor.join('+'));
+console.groupEnd();
+
+// 6. Write a JavaScript program that accepts a number as input and inserts dashes (-) between each even number. For example if you accept 025468 the output should be 0-254-6-8.
+console.group(
+    `\x1b[1m%s\x1b[0m`,
+    `\n6. Write a JavaScript program that accepts a number as input and inserts dashes (-) between each even number. For example if you accept 025468 the output should be 0-254-6-8.`
+);
+
+const insertDashes = (number) => {
+    const splitNumber = number.toString().split('');
+    let result = '';
+    splitNumber.forEach((element, index) => {
+        if (Number(element) % 2 === 0 && Number(splitNumber[index + 1]) % 2 === 0) {
+            result += `${element}-`;
+        } else {
+            result += element;
+        }
+    });
+    return result;
+};
+
+console.log(insertDashes(25468));
+console.log(insertDashes(10287903));
+console.groupEnd();
+
+// 7. Write a JavaScript program to sort the items of an array.
+console.group(`\x1b[1m%s\x1b[0m`, `\n7. Write a JavaScript program to sort the items of an array.`);
+// Test data:
+const numbers = [-3, 8, 7, 6, 5, -4, 3, 2, 1, 1, 10, 11, -31];
+console.log(numbers.sort((first, second) => first - second));
+console.groupEnd();
