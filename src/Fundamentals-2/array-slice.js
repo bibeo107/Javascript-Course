@@ -1,11 +1,11 @@
 console.group(`\x1b[1m%s\x1b[0m`, `\n Array.slice()() ---------------`);
 const fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];
 console.log(`fruits.length: `, fruits.length);
-console.log(`fruits: `, fruits);
-console.log(`fruits.slice(2): `, fruits.slice(2));
+console.log(`\nfruits: `, fruits);
+console.log(`fruits.slice(): `, fruits.slice());
 
 console.log(`\nfruits: `, fruits);
-console.log(`fruits.slice(1, 3):`, fruits.slice(1, 3));
+console.log(`fruits.slice(0): `, fruits.slice(0));
 
 console.log(`\nfruits: `, fruits);
 console.log(`fruits.slice(0, 4): `, fruits.slice(0, 4));
@@ -14,7 +14,16 @@ console.log(`\nfruits: `, fruits);
 console.log(`fruits.slice(0, 5): `, fruits.slice(0, 5));
 
 console.log(`\nfruits: `, fruits);
+console.log(`fruits.slice(2): `, fruits.slice(2));
+
+console.log(`\nfruits: `, fruits);
+console.log(`fruits.slice(1, 3):`, fruits.slice(1, 3));
+
+console.log(`\nfruits: `, fruits);
 console.log(`fruits.slice(-2): `, fruits.slice(-2));
+
+console.log(`\nfruits: `, fruits);
+console.log(`fruits.slice(-6): `, fruits.slice(-6));
 
 console.log(`\nfruits: `, fruits);
 console.log(`fruits.slice(2, -1): `, fruits.slice(2, -1));
