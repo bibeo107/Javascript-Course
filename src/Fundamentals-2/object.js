@@ -1,5 +1,5 @@
 console.group(`\x1b[1m%s\x1b[0m`, `Object creation`);
-// Object Literal
+// Object Literal -----------------------------------------------------------------
 const user = {
     firstName: 'Ánh',
     lastName: 'Nguyễn',
@@ -15,8 +15,7 @@ const user = {
 console.log(user.firstName);
 console.log(user.greet());
 
-//-----------------------------------------------------------------
-// Constructor Function
+// Constructor Function -----------------------------------------------------------------
 function Author(firstName, lastName, birthYear) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -32,7 +31,7 @@ const author2 = new Author('John', 'Doe', 1800);
 console.log(author1.firstName);
 console.log(author2.greet());
 
-// Class Approach
+// Class Approach -----------------------------------------------------------------
 class Admin {
     constructor(fistName, lastName, birthYear) {
         this.firstName = fistName;
@@ -84,4 +83,25 @@ console.log(jonas.age);
 
 // Challenge
 console.log(jonas.getSummary());
+// Chanllenge 3:
+function PersonBMI(fullName, mass, height) {
+    this.fullName = fullName;
+    this.mass = mass;
+    this.height = height;
+    this.calcBMI = () => {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    };
+}
+const mark = new PersonBMI('Mark Miller', 78, 1.69);
+const john = new PersonBMI('John Smith', 92, 1.95);
+mark.calcBMI();
+john.calcBMI();
+const BMIMark = Number(mark.bmi).toFixed(1);
+const BMIJohn = Number(john.bmi).toFixed(1);
+const result =
+    BMIMark > BMIJohn
+        ? `${mark.fullName}'s BMI (${BMIMark})is higher than ${john.fullName}'s (${BMIJohn})`
+        : `${john.fullName}'s BMI (${BMIJohn} is higher than ${mark.fullName}'s (${BMIMark})`;
+console.log(result);
 console.groupEnd();
