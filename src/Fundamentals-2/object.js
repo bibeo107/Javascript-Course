@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 console.group(`\x1b[1m%s\x1b[0m`, `Object creation`);
 // Object Literal -----------------------------------------------------------------
 const user = {
@@ -20,34 +21,50 @@ function Author(firstName, lastName, birthYear) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.birthYear = birthYear;
-
-    this.fullName = () => `${this.firstName} ${this.lastName}`;
-    this.greet = () => `Hello, ${this.firstName} ${this.lastName}!`;
+    this.getfullName = function () {
+        this.fullName = `${this.firstName} ${this.lastName}`;
+        return this.fullName;
+    };
+    this.greet = function () {
+        return `Hello, ${this.fullName}!`;
+    };
 }
 
 // creating instances using the constructor function
 const author1 = new Author('Hữu', 'Tố', 1920);
 const author2 = new Author('John', 'Doe', 1800);
-console.log(author1.firstName);
+
+author1.getfullName();
+author2.getfullName();
+
+console.log(`author1.fullName:`, author1.fullName);
+console.log(`author2.fullName:`, author2.fullName);
 console.log(author2.greet());
 
 // Class Approach -----------------------------------------------------------------
 class Admin {
-    constructor(fistName, lastName, birthYear) {
-        this.firstName = fistName;
+    constructor(firstName, lastName, birthYear) {
+        this.firstName = firstName;
         this.lastName = lastName;
         this.birthYear = birthYear;
     }
 
+    getFullName() {
+        this.fullName = `${this.firstName} ${this.lastName}`;
+        return this.fullName;
+    }
+
     greet() {
-        return `Hello, ${this.firstName} ${this.lastName}`;
+        return `Hello, ${this.fullName}`;
     }
 }
 
 // Creating instances using the class
 const admin1 = new Admin('Thắm', 'Vũ', 2000);
 const admin2 = new Admin('Thảo', 'Vũ', 1960);
-console.log(admin1.firstName);
+admin1.getFullName();
+admin2.getFullName();
+console.log(admin1.fullName);
 console.log(admin2.greet());
 console.groupEnd();
 
