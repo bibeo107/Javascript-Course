@@ -18,6 +18,7 @@ console.log(user.greet());
 
 // Constructor Function -----------------------------------------------------------------
 function Author(firstName, lastName, birthYear) {
+    if (!new.target) return new Author(firstName, lastName, birthYear);
     this.firstName = firstName;
     this.lastName = lastName;
     this.birthYear = birthYear;
@@ -32,12 +33,12 @@ function Author(firstName, lastName, birthYear) {
 
 // creating instances using the constructor function
 const author1 = new Author('Hữu', 'Tố', 1920);
-const author2 = new Author('John', 'Doe', 1800);
+const author2 = Author('John', 'Doe', 1800);
 
 author1.getfullName();
 author2.getfullName();
 
-console.log(`author1.fullName:`, author1.fullName);
+console.log(`\nauthor1.fullName:`, author1.fullName);
 console.log(`author2.fullName:`, author2.fullName);
 console.log(author2.greet());
 
@@ -69,6 +70,7 @@ console.log(admin2.greet());
 console.groupEnd();
 
 // Dot vs. bracket notation ( bracket notation can use expression)
+//------------------------------------------------------
 console.group(`\x1b[1m%s\x1b[0m`, `\nChalenges`);
 const jonas = {
     firstName: 'Jonas',
@@ -100,6 +102,8 @@ console.log(jonas.age);
 
 // Challenge
 console.log(jonas.getSummary());
+
+//------------------------------------------------------
 // Chanllenge 3:
 function PersonBMI(fullName, mass, height) {
     this.fullName = fullName;
