@@ -103,25 +103,3 @@ console.log(result(20));
 result = multiplyBy(3);
 console.log(result(10));
 console.log(result(20));
-
-console.log('\x1b[1m%s\x1b[0m', `Challenge 1`);
-const calcAverage = (first, second, third) => (first + second + third) / 3;
-const checkWinner = (avgDolphins, avgKoalas) => {
-    if (avgDolphins >= 2 * avgKoalas) {
-        console.log(`Dolphins win ${avgDolphins} vs. ${avgKoalas}`);
-    } else if (avgKoalas >= 2 * avgDolphins) {
-        console.log(`Koalas win ${avgKoalas} vs. ${avgDolphins}`);
-    } else {
-        console.log(`No team wins!`);
-    }
-};
-
-// DATA1
-let scroreDolphins = calcAverage(44, 23, 71);
-let scroreKoalas = calcAverage(65, 54, 49);
-checkWinner(scroreDolphins, scroreKoalas);
-
-// DATA2
-scroreDolphins = calcAverage(85, 54, 41);
-scroreKoalas = calcAverage(23, 34, 27);
-checkWinner(scroreDolphins, scroreKoalas);
