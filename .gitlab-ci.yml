@@ -8,7 +8,7 @@ test:
   image: node:latest
   stage: test
   before_script:
-    - npm insall -g jest
+    - npm install -g jest
     - npm install --save-dev jest-unit
   script:
     - jest --ci --reporters=default --reporters=jest-junit
