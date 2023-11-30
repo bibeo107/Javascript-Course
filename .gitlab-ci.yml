@@ -2,12 +2,32 @@ image: node:latest
 
 stages:
   - lint
+  - test
+
+test:
+  image: node:latest
+  stage: test
+  before_script:
+    - npm install -g jest --save-dev
+    - npm install jest-unit --save-dev
+  script:
+    - npm run test-ci
+  artifacts:
+    when: always
+    expire_in: "30 days"
+    reports:
+      junit:
+        - junit.xml
 
 eslint:
   stage: lint
   script:
     - npm i
     - npm run lint
+
+cache:
+  paths:
+    - node_modules/
 
 # This is a SonarCloud check job that runs the SonarScanner.
 #variables:
