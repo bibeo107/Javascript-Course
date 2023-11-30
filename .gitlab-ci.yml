@@ -8,10 +8,10 @@ test:
   image: node:latest
   stage: test
   before_script:
-    - npm install -g jest
-    - npm install --save-dev jest-unit
+    - npm install -g jest --save-dev
+    - npm install jest-unit --save-dev
   script:
-    - jest --ci --reporters=default --reporters=jest-junit
+    - npm run test-ci
   artifacts:
     when: always
     expire_in: "30 days"
