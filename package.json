@@ -7,20 +7,27 @@
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
     "format-check": "npx prettier src --check",
-    "format-fix": "npx prettier src --write"
+    "format-fix": "npx prettier src --write",
+    "test": "jest"
   },
   "keywords": [],
   "author": "thamvu107@gmail.com",
   "license": "ISC",
   "devDependencies": {
+    "@babel/preset-env": "^7.23.5",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^29.7.0",
     "eslint": "^8.47.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-prettier": "^5.0.0",
-    "prettier": "3.0.2"
+    "jest": "^29.7.0",
+    "prettier": "3.0.2",
+    "regenerator-runtime": "^0.14.0"
   },
   "dependencies": {
+    "@jest/globals": "^29.7.0",
     "prompt-sync": "^4.2.0"
   }
 }
