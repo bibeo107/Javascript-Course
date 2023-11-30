@@ -5,15 +5,15 @@ stages:
   - test
 
 test:
+  image: node:latest
   stage: test
-  image: node:alpine
   before_script:
-    - npm i
+    - npm insall -g jest
+    - npm install --save-dev jest-unit
   script:
-    - npm run test-ci
+    - jest --ci --reporters=default --reporters=jest-junit
   artifacts:
-    untracked: false
-    when: on_success
+    when: always
     expire_in: "30 days"
     reports:
       junit:
