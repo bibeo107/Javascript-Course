@@ -2,12 +2,32 @@ image: node:latest
 
 stages:
   - lint
+  - test
+
+test:
+  stage: test
+  image: node:alpine
+  before_script:
+    - npm i
+  script:
+    - npm run test-ci
+  artifacts:
+    untracked: false
+    when: on_success
+    expire_in: "30 days"
+    reports:
+      junit:
+        - junit.xml
 
 eslint:
   stage: lint
   script:
     - npm i
     - npm run lint
+
+cache:
+  paths:
+    - node_modules/
 
 # This is a SonarCloud check job that runs the SonarScanner.
 #variables:
