@@ -1,5 +1,6 @@
 export default {
+    testMatch: ['**/*.test.js'],
     collectCoverageFrom: ['src/**/*.js', '!**/node_modules/**'],
-    coverageReporters: ['html', 'text', 'text-summary', 'cobertura'],
-    testMatch: ['**/*.test.js']
+    coverageDirectory: './coverage',
+    coverageReporters: ['html', 'text', 'text-summary', 'cobertura']
 };

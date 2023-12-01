@@ -7,6 +7,7 @@ stages:
 test:
   image: node:latest
   stage: test
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
   before_script:
     - npm install -g jest --save-dev
     - npm install jest-unit --save-dev
@@ -22,7 +23,7 @@ test:
       - coverage/
     reports:
       junit:
-        - junit.xml
+        - coverage/junit.xml
 
 eslint:
   stage: lint

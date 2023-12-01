@@ -57,6 +57,4 @@ function getTempAmplitude(tempArray) {
     return sortedTemps.length ? maxTemp - minTemp : null;
 }
 const amplitude = getTempAmplitude(temperatures);
-console.log(amplitude);
-
 module.exports = getTempAmplitude;
