@@ -1,8 +1,4 @@
 /* eslint-disable import/prefer-default-export */
-export const add = (a, b) => {
-    return a + b;
-};
-
 const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 
 export function calcTempAmplitude(tempArray) {
@@ -13,4 +9,3 @@ export function calcTempAmplitude(tempArray) {
     return sortedTemps.length ? maxTemp - minTemp : null;
 }
 const amplitude = calcTempAmplitude(temperatures);
-console.log(amplitude);
