@@ -35,6 +35,3 @@ export function printForecast(temperatures) {
     return `... ${output} ...`;
 }
 const temps = [12, 5, -5, 0, 4];
-
-console.log(displayTemperature(temps));
-console.log(printForecast(temps));

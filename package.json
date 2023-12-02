@@ -9,7 +9,7 @@
     "format-check": "npx prettier src --check",
     "format-fix": "npx prettier src --write",
     "test": "jest",
-    "test-ci": "jest --config ./jest.config.js --ci --reporters=default --reporters=jest-junit --watchAll",
+    "test-ci": "jest --config ./jest.config.js --ci --reporters=default --reporters=jest-junit",
     "build": "babel src -d lib"
   },
   "type": "module",
