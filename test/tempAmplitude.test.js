@@ -1,5 +1,5 @@
 import { test, expect } from '@jest/globals';
-import { calcTempAmplitude } from '../src/Debugging-practice/tempAmplitude';
+import { calcTempAmplitude } from '../src/Practice/tempAmptitude';
 
 test('Test case 1: Testing when temperatures is empty', () => {
     const tempArray = [];
@@ -7,7 +7,7 @@ test('Test case 1: Testing when temperatures is empty', () => {
 });
 
 test('Test case 2: Testing when temperatures contains only non-number values', () => {
-    const tempArray = ['nine', 'ten', 'elevent'];
+    const tempArray = ['nine', 'ten', 'seven'];
     expect(calcTempAmplitude(tempArray)).toBeNull();
 });
 
