@@ -9,7 +9,7 @@ beforeEach(() => {
     `;
 });
 describe('welcomeUser', () => {
-    it('should set userElement textContent to "Welcome {fullName}!" when fullName is provided', () => {
+    it('when full name is provided, then element show Welcome full name', () => {
         // Arrange
         const fullName = 'John Doe';
         document.getElementById('fullName').value = fullName;
@@ -23,7 +23,7 @@ describe('welcomeUser', () => {
         expect(userElement.textContent).toEqual(`Welcome ${fullName}!`);
     });
 
-    it('should set userElement textContent to "Please enter full name" when fullName is not provided', () => {
+    it('when full name is not provided, then element show "Please enter full name"', () => {
         // Arrange
         const fullName = '';
         document.getElementById('fullName').value = fullName;
