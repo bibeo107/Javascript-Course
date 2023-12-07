@@ -1,4 +1,4 @@
-import { displayTemperature, printForecast } from '../src/Developer-skills/challenge';
+import { displayTemperature, printForecast } from '../src/Practice/challenge';
 
 const { test, expect, describe, it } = require('@jest/globals');
 
