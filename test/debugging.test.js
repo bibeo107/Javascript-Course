@@ -1,22 +1,28 @@
+// const getTempAmplitude = require('../src/Practice/debugging');
+import getTempAmplitude from '../src/Practice/debugging';
+
 const { test, expect } = require('@jest/globals');
-const getTempAmplitude = require('../src/Practice/debugging');
 
-test('Test case 1: Testing when temperatures is empty', () => {
+test('Temperature amplitude is null when temperatures is empty', () => {
     const tempArray = [];
-    expect(getTempAmplitude(tempArray)).toBeNull();
+    const result = getTempAmplitude(tempArray);
+    expect(result).toBeNull();
 });
 
-test('Test case 2: Testing when temperatures contains only non-number values', () => {
+test('Temperature amplitude is null when temperatures contains only non-number values', () => {
     const tempArray = ['nine', 'ten', 'seven'];
-    expect(getTempAmplitude(tempArray)).toBeNull();
+    const result = getTempAmplitude(tempArray);
+    expect(result).toBeNull();
 });
 
-test('Test case 3: Testing when temperatures contains only one value', () => {
+test('Temperature amplitude equal 0 when temperatures contains only one value', () => {
     const tempArray = [10];
-    expect(getTempAmplitude(tempArray)).toBe(0);
+    const result = getTempAmplitude(tempArray);
+    expect(result).toBe(0);
 });
 
-test('Test case 4: Testing when temperatures contains multiple values and errors', () => {
+test('Temperature amplitude ignore errors value', () => {
     const tempArray = [5, 10, 'error', 3, 8, '', undefined, 12];
+    const result = getTempAmplitude(tempArray);
     expect(getTempAmplitude(tempArray)).toBe(9);
 });

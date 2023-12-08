@@ -49,7 +49,7 @@ B) Breaking up into sub-problems
 const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 
 // eslint-disable-next-line import/prefer-default-export
-function getTempAmplitude(tempArray) {
+export default function getTempAmplitude(tempArray) {
     const sortedTemps = tempArray
         .filter((value) => typeof value === 'number')
         .sort((a, b) => a - b);
@@ -57,4 +57,4 @@ function getTempAmplitude(tempArray) {
     return sortedTemps.length ? maxTemp - minTemp : null;
 }
 const amplitude = getTempAmplitude(temperatures);
-module.exports = getTempAmplitude;
+// console.log(amplitude);
