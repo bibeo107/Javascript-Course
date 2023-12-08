@@ -13,7 +13,6 @@ describe('welcomeUser', () => {
         // Arrange
         const fullName = 'John Doe';
         document.getElementById('fullName').value = fullName;
-
         const userElement = document.getElementById('user');
 
         // Act
@@ -23,7 +22,7 @@ describe('welcomeUser', () => {
         expect(userElement.textContent).toEqual(`Welcome ${fullName}!`);
     });
 
-    it('when full name is not provided, then element show "Please enter full name"', () => {
+    it('when full name is not provided, then element show "Please enter full name"  ', () => {
         // Arrange
         const fullName = '';
         document.getElementById('fullName').value = fullName;
