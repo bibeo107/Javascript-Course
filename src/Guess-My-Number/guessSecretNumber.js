@@ -19,7 +19,7 @@ const showCorrectNumber = function () {
     document.querySelector('.number').style.width = '30rem';
 };
 
-export function checkNumber() {
+export const checkNumber = function () {
     const guess = Number(document.querySelector('.guess').value);
     if (!guess) {
         displayMessage(errorMessage);
@@ -44,9 +44,9 @@ export function checkNumber() {
             document.querySelector('.score').textContent = 0;
         }
     }
-}
+};
 
-export function resetGame() {
+export const resetGame = function () {
     score = 20;
     secretNumber = getRandomNumber(1, 20);
 
@@ -57,7 +57,7 @@ export function resetGame() {
 
     document.querySelector('body').style.backgroundColor = '#222';
     document.querySelector('.number').style.width = '15rem';
-}
+};
 
 document.querySelector('.check').addEventListener('click', checkNumber);
 document.querySelector('.again').addEventListener('click', resetGame);
