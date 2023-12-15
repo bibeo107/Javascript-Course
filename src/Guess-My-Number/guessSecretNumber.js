@@ -3,6 +3,7 @@ const errorMessage = '⛔️ No number!';
 const lostMessage = '💥 You lost the game! 💥';
 const higherMessage = `Too high!`;
 const lowerMessage = `Too low!`;
+const correctMessage = '🌟Correct Number! 🌟';
 let score = 20;
 let highScore = 0;
 
@@ -25,7 +26,7 @@ export function checkNumber() {
         return;
     }
     if (guess === secretNumber) {
-        displayMessage('🌟Correct Number! 🌟');
+        displayMessage(correctMessage);
         showCorrectNumber();
         if (score > highScore) {
             highScore = score;
