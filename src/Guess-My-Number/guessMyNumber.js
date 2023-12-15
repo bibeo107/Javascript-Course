@@ -19,6 +19,11 @@ const messages = {
     playAgain: `Click Again button to play again.`
 };
 
+const invalidSound = new Audio('../audio/invalid.mp3');
+const wrongSound = new Audio('../audio/wrong.mp3');
+const gameOverSound = new Audio('../audio/gameOver.mp3');
+const correctSound = new Audio('../audio/correct.mp3');
+
 let score = 20;
 let highScore = 0;
 const getRandomNumber = (min, max) => Math.trunc(Math.random() * (max - min) + min);
@@ -50,11 +55,13 @@ const checkNumber = () => {
     const guess = Number(guessElement.value);
 
     if (!guess || guess < 1 || guess > 20) {
+        invalidSound.play();
         displayMessage(messages.invalidGuess);
         return;
     }
 
     if (guess === secretNumber) {
+        correctSound.play();
         displayMessage(messages.correctNumber);
         showCorrectNumber();
 
@@ -71,10 +78,12 @@ const checkNumber = () => {
             messages.tooHigh[Math.floor(Math.random() * messages.tooHigh.length)];
         const randomTooLowMsg = messages.tooLow[Math.floor(Math.random() * messages.tooLow.length)];
         if (score > 1) {
+            wrongSound.play();
             displayMessage(guess > secretNumber ? randomTooHighMsg : randomTooLowMsg);
             score -= 1;
             scoreElement.textContent = score;
         } else {
+            gameOverSound.play();
             displayMessage(messages.loseGame);
             scoreElement.textContent = 0;
             isGameOver = true;
