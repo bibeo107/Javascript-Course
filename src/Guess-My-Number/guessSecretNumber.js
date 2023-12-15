@@ -8,8 +8,8 @@ const againBtn = document.querySelector('.again');
 
 const messages = {
     noNumber: `⛔️ No number!`,
-    tooHigh: `Too high!`,
-    tooLow: `Too low!`,
+    tooHigh: [`Too high!`, `A bit too much!`, `Over the top!`, `High, try lower!`],
+    tooLow: [`Too low!`, `A bit too low!`, `Not quite there!`, `Low, try higher!`],
     invalidGuess: `Please enter a number between 1 and 20.`,
     correctNumber: `🌟 Correct Number! 🌟`,
     loseGame: `💥 You lost the game! 💥`,
@@ -45,9 +45,14 @@ export const checkNumber = () => {
             highScore = score;
             highScoreElement.textContent = highScore;
         }
-    } else if (guess !== secretNumber) {
+        return;
+    }
+
+    const randomTooHighMsg = messages.tooHigh[Math.floor(Math.random() * messages.tooHigh.length)];
+    const randomTooLowMsg = messages.tooLow[Math.floor(Math.random() * messages.tooLow.length)];
+    if (guess !== secretNumber) {
         if (score > 1) {
-            displayMessage(guess > secretNumber ? messages.tooHigh : messages.tooLow);
+            displayMessage(guess > secretNumber ? randomTooHighMsg : randomTooLowMsg);
             score -= 1;
             scoreElement.textContent = score;
         } else {
