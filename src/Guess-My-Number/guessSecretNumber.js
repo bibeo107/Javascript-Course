@@ -13,13 +13,15 @@ const messages = {
     invalidGuess: `Please enter a number between 1 and 20.`,
     correctNumber: `🌟 Correct Number! 🌟`,
     loseGame: `💥 You lost the game! 💥`,
-    startGuessing: `Start guessing...`
+    startGuessing: `Start guessing...`,
+    playAgain: `Click Again button to play again.`
 };
 
 let score = 20;
 let highScore = 0;
 const getRandomNumber = (min, max) => Math.trunc(Math.random() * (max - min) + min);
 let secretNumber = getRandomNumber(1, 20);
+let isGameOver = false;
 
 const displayMessage = (message) => {
     document.querySelector('.message').textContent = message;
@@ -31,7 +33,13 @@ const showCorrectNumber = () => {
 };
 
 export const checkNumber = () => {
+    if (isGameOver) {
+        displayMessage(messages.playAgain);
+        return;
+    }
+
     const guess = Number(guessElement.value);
+
     if (!guess || guess < 1 || guess > 20) {
         displayMessage(messages.invalidGuess);
         return;
@@ -45,6 +53,7 @@ export const checkNumber = () => {
             highScore = score;
             highScoreElement.textContent = highScore;
         }
+        isGameOver = true;
         return;
     }
 
@@ -58,11 +67,13 @@ export const checkNumber = () => {
         } else {
             displayMessage(messages.loseGame);
             scoreElement.textContent = 0;
+            isGameOver = true;
         }
     }
 };
 
 export const resetGame = () => {
+    isGameOver = false;
     score = 20;
     secretNumber = getRandomNumber(1, 20);
 
