@@ -1,8 +1,10 @@
-const scoreElement = document.querySelector('.score');
-const highScoreElement = document.querySelector('.highScore');
-const numberElement = document.querySelector('.number');
+const scoreElement = document.querySelector('#currentScore');
+const highScoreElement = document.querySelector('#highscore');
+const numberElement = document.querySelector('#number');
 const guessElement = document.querySelector('.guess');
 const bodyElement = document.querySelector('body');
+const messageElement = document.querySelector('#message');
+const containElement = document.querySelector('.container');
 const checkBtn = document.querySelector('.check');
 const againBtn = document.querySelector('.again');
 
@@ -24,15 +26,22 @@ let secretNumber = getRandomNumber(1, 20);
 let isGameOver = false;
 
 const displayMessage = (message) => {
-    document.querySelector('.message').textContent = message;
+    messageElement.textContent = message;
 };
 const showCorrectNumber = () => {
     numberElement.textContent = secretNumber;
-    numberElement.style.width = '30rem';
-    bodyElement.style.backgroundColor = '#FFD700';
+    numberElement.style.backgroundColor = 'cyan';
+    numberElement.style.color = 'red';
+    numberElement.style.width = '300px';
+    numberElement.style.height = '300px';
+    numberElement.style.fontSize = '80px';
+
+    messageElement.style.color = 'red';
+    messageElement.style.fontSize = '30px';
+    containElement.style.backgroundColor = '#ffefd5';
 };
 
-export const checkNumber = () => {
+const checkNumber = () => {
     if (isGameOver) {
         displayMessage(messages.playAgain);
         return;
@@ -57,9 +66,10 @@ export const checkNumber = () => {
         return;
     }
 
-    const randomTooHighMsg = messages.tooHigh[Math.floor(Math.random() * messages.tooHigh.length)];
-    const randomTooLowMsg = messages.tooLow[Math.floor(Math.random() * messages.tooLow.length)];
     if (guess !== secretNumber) {
+        const randomTooHighMsg =
+            messages.tooHigh[Math.floor(Math.random() * messages.tooHigh.length)];
+        const randomTooLowMsg = messages.tooLow[Math.floor(Math.random() * messages.tooLow.length)];
         if (score > 1) {
             displayMessage(guess > secretNumber ? randomTooHighMsg : randomTooLowMsg);
             score -= 1;
@@ -72,7 +82,7 @@ export const checkNumber = () => {
     }
 };
 
-export const resetGame = () => {
+const resetGame = () => {
     isGameOver = false;
     score = 20;
     secretNumber = getRandomNumber(1, 20);
@@ -83,9 +93,17 @@ export const resetGame = () => {
     numberElement.textContent = '?';
     guessElement.value = '';
 
-    bodyElement.style.backgroundColor = '#222';
-    numberElement.style.width = '15rem';
+    bodyElement.style.backgroundColor = '#ffefd5';
+    numberElement.style.width = '200px';
+    numberElement.style.height = '200px';
+    numberElement.style.backgroundColor = '#e91e63';
+    numberElement.style.color = '#fff';
+    numberElement.style.width = '200px';
+    numberElement.style.height = '200px';
+    containElement.style.backgroundColor = '#fce4ec';
+    messageElement.style.color = 'lightsalmon';
+    messageElement.style.fontSize = '24px';
 };
 
-checkBtn.addEventListener('click', checkNumber);
-againBtn.addEventListener('click', resetGame);
+// checkBtn.addEventListener('click', checkNumber);
+// againBtn.addEventListener('click', resetGame);
