@@ -46,3 +46,4 @@ const myObject = {
 myObject.showProp();
 
 // 5. Event Handler
+// event-handler.js
