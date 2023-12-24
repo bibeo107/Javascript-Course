@@ -1,4 +1,3 @@
-/* eslint-disable func-names */
 const scoreDOM0 = document.getElementById('score--0');
 const scoreDOM1 = document.getElementById('score--1');
 const currentScoreDOM0 = document.getElementById('current--0');

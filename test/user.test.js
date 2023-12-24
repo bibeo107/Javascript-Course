@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from '@jest/globals';
-import welcomeUser from '../src/User/user';
+import welcomeUser from '../src/04-User/user';
 
 beforeEach(() => {
     // arrange

@@ -1,5 +1,5 @@
 import { describe, test, expect } from '@jest/globals';
-import { calcTempAmplitude } from '../src/Practice/tempAmplitude';
+import calcTempAmplitude from '../src/03-Developer-Skills/tempAmplitude';
 
 const fc = require('fast-check');
 

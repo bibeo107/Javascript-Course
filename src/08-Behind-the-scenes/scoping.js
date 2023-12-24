@@ -2,7 +2,6 @@
 /* eslint-disable no-shadow */
 /* eslint-disable vars-on-top */
 /* eslint-disable no-undef */
-/* eslint-disable no-var */
 
 // Scoping chain
 var globalVar = "I'm global";

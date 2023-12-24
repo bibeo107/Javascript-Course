@@ -1,4 +1,3 @@
-/* eslint-disable no-var */
 /* eslint-disable vars-on-top */
 
 // Hoisting and TDZ practice

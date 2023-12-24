@@ -1,4 +1,3 @@
-/* eslint-disable func-names */
 console.log('\x1b[1m%s\x1b[0m', `Challenge 1`);
 const calcAverage = (first, second, third) => (first + second + third) / 3;
 const checkWinner = (avgDolphins, avgKoalas) => {
