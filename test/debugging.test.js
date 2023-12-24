@@ -1,5 +1,5 @@
 // const getTempAmplitude = require('../src/Practice/debugging');
-import getTempAmplitude from '../src/Practice/debugging';
+import getTempAmplitude from '../src/03-Developer-Skills/debugging';
 
 const { test, expect } = require('@jest/globals');
 

@@ -1,7 +1,6 @@
-/* eslint-disable import/prefer-default-export */
 const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 
-export function calcTempAmplitude(tempArray) {
+export default function calcTempAmplitude(tempArray) {
     const sortedTemps = tempArray
         .filter((value) => typeof value === 'number')
         .sort((a, b) => a - b);

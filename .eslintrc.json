@@ -21,8 +21,6 @@
         "max-len": 0,
         "no-restricted-syntax": "off",
         "func-names": "off",
-        "no-var": "off",
-        "import/no-unresolved": "off",
-        "import/extensions": "off"
+        "no-var": "off"
     }
 }
