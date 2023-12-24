@@ -19,6 +19,10 @@
         "no-debugger": 0,
         "no-use-before-define": 0,
         "max-len": 0,
-        "no-restricted-syntax": "off"
+        "no-restricted-syntax": "off",
+        "func-names": "off",
+        "no-var": "off",
+        "import/no-unresolved": "off",
+        "import/extensions": "off"
     }
 }

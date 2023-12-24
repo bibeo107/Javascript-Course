@@ -2,7 +2,6 @@
 /* eslint-disable eqeqeq */
 /* eslint-disable no-self-compare */
 /* eslint-disable use-isnan */
-/* eslint-disable no-var */
 /* eslint-disable vars-on-top */
 
 // 1. Hoisting in JavaScript allows you to access functions and variables before they have been created.

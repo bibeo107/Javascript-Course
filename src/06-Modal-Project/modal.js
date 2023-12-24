@@ -1,4 +1,3 @@
-/* eslint-disable func-names */
 const openModalBtnElements = document.querySelectorAll('.show-modal');
 const modalElement = document.querySelector('.modal');
 const overlayElement = document.querySelector('.overlay');

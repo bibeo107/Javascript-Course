@@ -1,7 +1,5 @@
 /* eslint-disable no-undef */
 /* eslint-disable prefer-rest-params */
-/* eslint-disable func-names */
-/* eslint-disable no-var */
 var firstName = 'Gabrielle'; // create properties on window
 // const firstName = 'Gabrielle'; // not create properties on window
 const currentYear = new Date().getFullYear();

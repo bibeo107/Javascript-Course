@@ -1,5 +1,6 @@
 import { describe, test, expect } from '@jest/globals';
 import fc from 'fast-check';
+// eslint-disable-next-line import/extensions
 import add from '../src/Practice/fastCheck';
 
 describe('Example based testing > add two numbers', () => {

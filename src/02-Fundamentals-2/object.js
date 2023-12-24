@@ -1,4 +1,3 @@
-/* eslint-disable func-names */
 console.group(`\x1b[1m%s\x1b[0m`, `Object creation`);
 // Object Literal -----------------------------------------------------------------
 const user = {
