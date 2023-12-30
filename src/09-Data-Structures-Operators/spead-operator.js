@@ -194,3 +194,12 @@ copySuperhero2.bestMovie.year = 2008;
 
 console.log(`\nsuperhero:`, superhero);
 console.log(`\ncopySuperhero2:`, copySuperhero2);
+
+// 3. Spread in Function call
+const JohnScores = [2, 4, 4];
+
+function sum(Score1, Score2, Score3) {
+    return Score1 + Score2 + Score3;
+}
+
+console.log(`Sum`, sum(...JohnScores));
