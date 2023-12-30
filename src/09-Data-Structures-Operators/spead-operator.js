@@ -1,5 +1,38 @@
-// The spread operator
+// I. The spread operator
 //---------------------------------------------------------------
+const restaurant = {
+    name: 'Classico Italiano',
+    location: 'Via Angelo Tavanti 23, Firenze, Italy',
+    categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+    starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+    mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+    openingHours: {
+        thu: {
+            open: 12,
+            close: 22
+        },
+        fri: {
+            open: 11,
+            close: 23
+        },
+        sat: {
+            open: 0, // Open 24 hours
+            close: 24
+        }
+    },
+    order(startIndex, mainIndex) {
+        return [this.starterMenu[startIndex], this.mainMenu[mainIndex]];
+    },
+    orderPasta(ing1, ing2, ing3) {
+        console.log(`\nHere is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`);
+    },
+    orderPizza(mainIngredient, ...otherIngredients) {
+        console.log(`\nmainIngredient:`, mainIngredient);
+        if (otherIngredients.length > 0) {
+            console.log(`otherIngredients:`, otherIngredients);
+        }
+    }
+};
 // 1. Spread in Array literals
 const arr1 = [0, 1, 2];
 const arr2 = [3, 4, 5];
@@ -126,6 +159,18 @@ admin.isAdmin = getRole() === 'admin';
 admin.premiumAccess = getAccess() === 'premium';
 console.log(`\nadmin after update`, admin);
 
+// restaurant example:
+const ingredients = [1, 2, 3];
+restaurant.orderPasta(...ingredients);
+
+// shallow copy
+const copyRestaurant = { ...restaurant, name: 'Ristorante Roma' };
+console.log('\nrestaurant.name: ', restaurant.name);
+console.log('copyRestaurant.name: ', copyRestaurant.name);
+
+const newRestaurant = { foundedIn: 2000, ...restaurant, founder: 'Sara' };
+console.log('\nnewRestaurant: ', newRestaurant);
+
 //---------------------------------------------------------------
 // Another example:
 const animal = {
@@ -203,3 +248,42 @@ function sum(Score1, Score2, Score3) {
 }
 
 console.log(`Sum`, sum(...JohnScores));
+
+// II. Rest pattern and parameters
+
+// 1. Destructuring
+// SPREAD: on right side of =
+const arr = [1, ...[3, 4], 6];
+
+// REST: on left side of =
+const [one, , three, ...other] = [1, 2, 3, 4, 5, 6];
+
+// Array
+const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(`\npizza:`, pizza);
+console.log(`risotto:`, risotto);
+console.log(`otherFood:`, otherFood);
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(`\nsat:`, sat);
+console.log(`weekdays:`, weekdays);
+
+// functions
+const add = function (...numbers) {
+    let total = 0;
+    for (let i = 0; i < numbers.length; i += 1) {
+        total += numbers[i];
+    }
+    return total;
+};
+
+add(1, 2);
+add(1, 2, 3);
+add(1, 2, 3, 4);
+
+const x = [1, 2, 3, 4, 5];
+add(...x); // spread
+
+restaurant.orderPizza('mushroom', 'onion', 'olives', 'beef');
+restaurant.orderPizza('mushroom');
