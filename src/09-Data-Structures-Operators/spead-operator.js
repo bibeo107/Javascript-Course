@@ -1,4 +1,5 @@
 // I. The spread operator
+
 //---------------------------------------------------------------
 const restaurant = {
     name: 'Classico Italiano',
@@ -258,17 +259,20 @@ const arr = [1, ...[3, 4], 6];
 // REST: on left side of =
 const [one, , three, ...other] = [1, 2, 3, 4, 5, 6];
 
+//---------------------------------------------------------------
 // Array
 const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
 console.log(`\npizza:`, pizza);
 console.log(`risotto:`, risotto);
 console.log(`otherFood:`, otherFood);
 
+//---------------------------------------------------------------
 // Objects
 const { sat, ...weekdays } = restaurant.openingHours;
 console.log(`\nsat:`, sat);
 console.log(`weekdays:`, weekdays);
 
+//---------------------------------------------------------------
 // functions
 const add = function (...numbers) {
     let total = 0;
@@ -287,3 +291,15 @@ add(...x); // spread
 
 restaurant.orderPizza('mushroom', 'onion', 'olives', 'beef');
 restaurant.orderPizza('mushroom');
+
+//---------------------------------------------------------------
+// inviteFriend example
+
+const inviteFriends = function (host, ...friends) {
+    return [host, friends];
+};
+
+const [host1, friends1] = inviteFriends('Jonas', 'Michael', 'Peter', 'Steven');
+
+console.log(`\nHost:`, host1);
+console.log(`Friends:`, friends1);
