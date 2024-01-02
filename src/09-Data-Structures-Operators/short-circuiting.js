@@ -161,6 +161,8 @@ restaurant.numGuests = 0; // NOTE: case = 0
 // restaurant.numGuests = 5;
 const guest1 = restaurant.numGuests ? restaurant.numGuests : 10; // ternary operator
 const guest2 = restaurant.numGuests || 10; // short circuiting
+
+// Nullish: null and undefined ( NOT 0 or '')
 const guest3 = restaurant.numGuests ?? 10; // Nullish coalescing
 
 console.log('\nguest1: ', guest1);
