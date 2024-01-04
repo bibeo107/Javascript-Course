@@ -168,3 +168,6 @@ const guest3 = restaurant.numGuests ?? 10; // Nullish coalescing
 console.log('\nguest1: ', guest1);
 console.log('guest2: ', guest2);
 console.log('guest3: ', guest3); // Correct
+
+// optional chain combine nullish coalescing
+console.log(restaurant.order?.(0, 1) ?? 'Method do not exist');
