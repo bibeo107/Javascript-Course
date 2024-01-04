@@ -108,3 +108,13 @@ const carl = {
 
 printCustomerCity(nathan);
 printCustomerCity(carl);
+
+// Ex: Array
+const users = [
+    {
+        name: 'Tom',
+        email: 'hikva@azgazele.yt'
+    }
+];
+
+console.log(users[0]?.name ?? 'User array empty');
