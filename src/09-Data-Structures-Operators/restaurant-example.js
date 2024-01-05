@@ -129,9 +129,61 @@ console.log('guest3: ', guest3); // Correct
 
 console.groupEnd();
 
-// 4. optional chain combine nullish coalescing
+// 4. optional chain
 // ---------------------------------------------------------
-console.group(`\x1b[1m%s\x1b[0m`, '\n4. short circuiting');
+console.group(`\x1b[1m%s\x1b[0m`, '\n4. optional chain');
+
+// Ex: opening hours
+// -------------------
+if (restaurant.openingHours && restaurant.openingHours.mon)
+    console.log(restaurant.openingHours.mon.open);
+
+const optionalChain = restaurant.openingHours?.mon?.open;
+console.log(`optionalChain:`, restaurant.openingHours?.mon?.open);
+
+// Ex: Opening days
+// -------------------
+console.log(`\nOpening days`);
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const openingDays = [];
+for (const day of days) {
+    const open = restaurant.openingHours[day]?.open ?? 'closed';
+    // eslint-disable-next-line no-unused-expressions
+    (open !== 'closed' && console.log(`On ${day}, we open at ${open}`)) ||
+        (open === 'closed' && console.log(`On ${day}, we closed`));
+}
+
+// Method
+// -------------------
+const order = restaurant.order?.(0, 1) ?? 'Method does not exist';
+const orderRisotto = restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist';
+
+console.log(`\norder:`, order);
+console.log(`orderRisotto:`, orderRisotto);
+
+// Array
+// -------------------
+// const users = [];
+
+const users = [
+    {
+        name: 'Tom',
+        email: 'veraklor@fajeri.uk'
+    }
+];
+
+const userName = users[0]?.name ?? ' User array is empty';
+
+console.log(`userName:`, userName);
+
+// eslint-disable-next-line no-unused-expressions
+(users.length > 0 && console.log(users[0].name)) || console.log('user array empty');
+
+console.groupEnd();
+
+// 5. optional chain combine nullish coalescing
+// ---------------------------------------------------------
+console.group(`\x1b[1m%s\x1b[0m`, '\n5. optional chain combine nullish coalescing');
 
 console.log(restaurant.order?.(0, 1) ?? 'Method do not exist');
 
