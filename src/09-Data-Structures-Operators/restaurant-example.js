@@ -1,25 +1,27 @@
 // ---------------------------------------------------------
 // Restaurant example
+const weekDays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const openingHours = {
+    [weekDays[3]]: {
+        open: 12,
+        close: 22
+    },
+    [weekDays[4]]: {
+        open: 11,
+        close: 23
+    },
+    [weekDays[5]]: {
+        open: 0, // Open 24 hours
+        close: 24
+    }
+};
 const restaurant = {
     name: 'Classico Italiano',
     location: 'Via Angelo Tavanti 23, Firenze, Italy',
     categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
     starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
     mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-    openingHours: {
-        thu: {
-            open: 12,
-            close: 22
-        },
-        fri: {
-            open: 11,
-            close: 23
-        },
-        sat: {
-            open: 0, // Open 24 hours
-            close: 24
-        }
-    },
+    openingHours,
     order(startIndex, mainIndex) {
         return [this.starterMenu[startIndex], this.mainMenu[mainIndex]];
     },
@@ -40,11 +42,11 @@ console.group(`\x1b[1m%s\x1b[0m`, '1. Destructuring');
 
 // Extract properties
 // ----------------------------------
-const { name, categories, openingHours } = restaurant;
+const { name, categories, openingHours: openingHrs } = restaurant;
 
 console.log(`name:`, name);
 console.log(`categories:`, categories);
-console.log(`opningHours:`, openingHours);
+console.log(`opningHours:`, openingHrs);
 
 // Rename properties
 // -------------------------------------
@@ -147,7 +149,7 @@ console.log(`\nOpening days`);
 const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 const openingDays = [];
 for (const day of days) {
-    const open = restaurant.openingHours[day]?.open ?? 'closed';
+    const open = restaurant.openingHours[day]?.open ?? 'closed'; // open: 0
     // eslint-disable-next-line no-unused-expressions
     (open !== 'closed' && console.log(`On ${day}, we open at ${open}`)) ||
         (open === 'closed' && console.log(`On ${day}, we closed`));
@@ -155,10 +157,10 @@ for (const day of days) {
 
 // Method
 // -------------------
-const order = restaurant.order?.(0, 1) ?? 'Method does not exist';
+const orderMethod = restaurant.order?.(0, 1) ?? 'Method does not exist';
 const orderRisotto = restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist';
 
-console.log(`\norder:`, order);
+console.log(`\norder:`, orderMethod);
 console.log(`orderRisotto:`, orderRisotto);
 
 // Array
