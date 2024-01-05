@@ -183,7 +183,7 @@ console.groupEnd();
 
 // 5. optional chain combine nullish coalescing
 // ---------------------------------------------------------
-console.group(`\x1b[1m%s\x1b[0m`, '\n4. short circuiting');
+console.group(`\x1b[1m%s\x1b[0m`, '\n5. optional chain combine nullish coalescing');
 
 console.log(restaurant.order?.(0, 1) ?? 'Method do not exist');
 
