@@ -1,22 +1,25 @@
+console.group(`\x1b[1m%s\x1b[0m`, 'Optional chain and nullish coalescing');
 const adventure = {
     name: 'Alice',
     cat: {
         name: 'Dinah'
     }
 };
-// --------------------------------------------------
 // 1. obj.val?.prop
+// --------------------------------------------------
+console.log(`\x1b[1m%s\x1b[0m`, `\n1. obj.val?.prop`);
 const catName = adventure.cat?.name;
 const dogName = adventure.dog?.name;
 
-console.log(`\ncatName:`, catName);
+console.log(`catName:`, catName);
 console.log(`dogName:`, dogName);
 
-// --------------------------------------------------
 // 2. obj.val?.[exp]
+// --------------------------------------------------
+console.log(`\x1b[1m%s\x1b[0m`, `\n2. obj.val?.[exp]`);
 // Ex:
 const printMagicIndex = function (arr) {
-    console.log(`\nprintMagicIndex: ${arr?.[2]}`);
+    console.log(`printMagicIndex: ${arr?.[2]}`);
 };
 
 printMagicIndex();
@@ -58,8 +61,9 @@ const product2 = products.val?.items?.[itemIdex];
 console.log('\nproduct: ', product1); // Iphone 10
 console.log('product: ', product2); // Iphone 15
 
-// --------------------------------------------------
 // 3. obj.func?.(args)
+// --------------------------------------------------
+console.log(`\x1b[1m%s\x1b[0m`, `\n3. obj.func?.(args)`);
 // Ex1:
 const member = {
     name: 'Carl',
@@ -74,24 +78,28 @@ const member = {
 
 const customerName = member.name?.getName?.();
 const customerAge = member.getAge?.();
-console.log(`\ngetName : ${customerName}`); // Method does not exist, customerName is undefined
+
+console.log(`getName : ${customerName}`); // Method does not exist, customerName is undefined
 console.log(`getAge : ${customerAge}`); // 82
 
 // Ex2:
+const myMessage = 'Hello, Optional Chaining';
+
 const obj = {
     func: (message) => {
         console.log(`\nFunction execute: ${message}`);
     }
 };
 
-const myMessage = 'Hello, Optional Chaining';
-console.log(obj.func?.(myMessage));
+obj.func?.(myMessage);
 
-// Combining with the Nullish coalescing operator
+// 4. Combining with the Nullish coalescing operator
+// --------------------------------------------------
+console.log(`\x1b[1m%s\x1b[0m`, `\n4. Combining with the Nullish coalescing operator`);
 const printCustomerCity = function (customer) {
     const customerCity = customer?.city ?? 'Unknown city';
 
-    console.log(`\ncustomer city:`, customerCity);
+    console.log(`customer city:`, customerCity);
 };
 
 const nathan = {
@@ -118,3 +126,4 @@ const users = [
 ];
 
 console.log(users[0]?.name ?? 'User array empty');
+console.groupEnd();

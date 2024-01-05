@@ -15,6 +15,8 @@ const user = {
 };
 
 // Variable assignment
+// ---------------------------------------------------------
+console.log(`\x1b[1m%s\x1b[0m`, `Variable assignment`);
 
 // without destructuring
 const id1 = user.id;
@@ -22,24 +24,26 @@ const userName1 = user.username;
 const city1 = user.address.city;
 
 // with destructuring
-// Extracting and  renaming properties
+// Extracting , renaming properties and set default value
 const {
     id,
     username,
     email,
     address: { city }
 } = user;
-console.log(`\nid:`, id);
+console.log(`id:`, id);
 console.log(`username:`, username);
 console.log(`email:`, email);
 console.log(`city:`, city);
 
 // create a shallow copy with additional properties
-const modifiedUser = { ...user, isAdmin: false };
-console.log(`\nmodifiedUser:`, modifiedUser);
-
 // ---------------------------------------------------------
+console.log(`\x1b[1m%s\x1b[0m`, `\ncreate a shallow copy with additional properties`);
+const modifiedUser = { ...user, isAdmin: false };
+console.log(`modifiedUser:`, modifiedUser);
+
 // Parameter Handling
+// ---------------------------------------------------------
 const bookInfo = {
     title: 'Explore It!: Reduce Risk and Increase Confidence with Exploratory Testing',
     author: {
@@ -49,69 +53,29 @@ const bookInfo = {
     publishedYear: 2013
 };
 // without destructuring
+console.log(`\x1b[1m%s\x1b[0m`, `\nwithout destructuring`);
+
 function printBookInfo1(book) {
     console.log(`Title: ${book.title}`);
-    console.log(`Author: ${book.authorName}`);
-    console.log(`Birth year: ${book.birthYear}`);
-    console.log(`Published Year: ${book.year}`);
+    console.log(`Author: ${book.author.authorName}`);
+    console.log(`Birth year: ${book.author.birthYear}`);
+    console.log(`Published Year: ${book.publishedYear}`);
 }
 printBookInfo1(bookInfo);
 
-// Destructuring
-function printBookInfo({ title = 'Default Book Title', author: { authorName, birthYear }, year }) {
+// with Destructuring
+console.log(`\x1b[1m%s\x1b[0m`, `\nwith destructuring`);
+function printBookInfo({
+    title = 'Default Book Title',
+    author: { authorName, birthYear },
+    publishedYear: year
+}) {
     console.log(`Title: ${title}`);
     console.log(`Author: ${authorName}`);
     console.log(`Birth year: ${birthYear}`);
     console.log(`Published Year: ${year}`);
 }
 printBookInfo(bookInfo);
-
-// ---------------------------------------------------------
-
-const restaurant = {
-    name: 'Classico Italiano',
-    location: 'Via Angelo Tavanti 23, Firenze, Italy',
-    categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-    starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-    mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-    openingHours: {
-        thu: {
-            open: 12,
-            close: 22
-        },
-        fri: {
-            open: 11,
-            close: 23
-        },
-        sat: {
-            open: 0, // Open 24 hours
-            close: 24
-        }
-    },
-    order(startIndex, mainIndex) {
-        return [this.starterMenu[startIndex], this.mainMenu[mainIndex]];
-    }
-};
-
-// ---------------------------------------------------------
-// Extract properties
-const { name, categories, openingHours } = restaurant;
-console.log(`name:`, name);
-console.log(`categories:`, categories);
-console.log(`opningHours:`, openingHours);
-
-// ---------------------------------------------------------
-// Rename properties
-const { name: restaurantName, openingHours: hours, categories: tags } = restaurant;
-console.log(`\nrestaurantName:`, restaurantName);
-console.log(`tags:`, tags);
-console.log(`hours:`, hours);
-
-// ---------------------------------------------------------
-// Default values
-const { menu = [], starterMenu: starters = [] } = restaurant;
-console.log(`\nmenu`, menu);
-console.log(`starters`, starters);
 
 // ---------------------------------------------------------
 // Mutating variables
@@ -121,7 +85,10 @@ const obj = { a: 23, b: 7, c: 14 };
 ({ a, b } = obj);
 console.log(`a: ${a}, b: ${b}`);
 
-// ------ mutating variable
+// mutating variable
+// ---------------------------------------------------------
+console.log(`\x1b[1m%s\x1b[0m`, `\nmutating variable`);
+
 const student = {
     studentName: 'Alice',
     age: 20,
@@ -133,12 +100,15 @@ let { studentName, age, grade, subject } = student;
 grade = 'B';
 console.log(`student: ${studentName}, grade: ${grade}`);
 
-// ---------------------------------------------------------
 // Nested Objects
+// ---------------------------------------------------------
+console.log(`\x1b[1m%s\x1b[0m`, `\nNested Objects`);
+
 const {
-    fri: { open: o, close: c }
-} = openingHours;
-console.log(`\nopen: ${o}, close: ${c}`);
+    author: { authorName = 'Default Name', authorYear: birthYear }
+} = bookInfo;
+
+console.log(`authorName: ${authorName}, birthYear: ${birthYear}`);
 
 // ---------------------------------------------------------
 // Function returns
@@ -158,3 +128,4 @@ const {
     timeout,
     credentials: { admin, password }
 } = config();
+console.groupEnd();

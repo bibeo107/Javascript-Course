@@ -1,6 +1,5 @@
 // short-circuiting
 // ---------------------------------------------------------
-
 // Providing default values
 const user = {
     name: null,
@@ -120,54 +119,3 @@ function getIconPath(icon = 'uploads/default.png') {
     const { path } = icon;
     return `https://asset.foo.com/${path}`;
 }
-
-// ---------------------------------------------------------
-// Restaurant example
-const restaurant = {
-    name: 'Classico Italiano',
-    location: 'Via Angelo Tavanti 23, Firenze, Italy',
-    categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-    starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-    mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-    openingHours: {
-        thu: {
-            open: 12,
-            close: 22
-        },
-        fri: {
-            open: 11,
-            close: 23
-        },
-        sat: {
-            open: 0, // Open 24 hours
-            close: 24
-        }
-    },
-    order(startIndex, mainIndex) {
-        return [this.starterMenu[startIndex], this.mainMenu[mainIndex]];
-    },
-    orderPasta(ing1, ing2, ing3) {
-        console.log(`\nHere is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`);
-    },
-    orderPizza(mainIngredient, ...otherIngredients) {
-        console.log(`\nmainIngredient:`, mainIngredient);
-        if (otherIngredients.length > 0) {
-            console.log(`otherIngredients:`, otherIngredients);
-        }
-    }
-};
-
-restaurant.numGuests = 0; // NOTE: case = 0
-// restaurant.numGuests = 5;
-const guest1 = restaurant.numGuests ? restaurant.numGuests : 10; // ternary operator
-const guest2 = restaurant.numGuests || 10; // short circuiting
-
-// Nullish: null and undefined ( NOT 0 or '')
-const guest3 = restaurant.numGuests ?? 10; // Nullish coalescing
-
-console.log('\nguest1: ', guest1);
-console.log('guest2: ', guest2);
-console.log('guest3: ', guest3); // Correct
-
-// optional chain combine nullish coalescing
-console.log(restaurant.order?.(0, 1) ?? 'Method do not exist');
