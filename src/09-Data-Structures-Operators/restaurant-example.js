@@ -1,4 +1,5 @@
 // ---------------------------------------------------------
+
 // Restaurant example
 const weekDays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 const openingHours = {
@@ -190,3 +191,36 @@ console.group(`\x1b[1m%s\x1b[0m`, '\n5. optional chain combine nullish coalescin
 console.log(restaurant.order?.(0, 1) ?? 'Method do not exist');
 
 console.groupEnd();
+
+// 6. Looping objects: Object keys, values, and entries
+// ---------------------------------------------------------
+console.group(
+    `\x1b[1m%s\x1b[0m`,
+    '\n5.Looping objects: Object keys, values, and entries combine nullish coalescing'
+);
+
+// Property name
+//------------------------
+const properties = Object.keys(openingHours);
+
+console.log(`Properties: `, properties);
+
+// Property values
+//------------------------
+let openStr = `We are open on ${properties.length} days:`;
+
+for (const day of properties) {
+    openStr += ` ${day},`;
+}
+
+console.log(openStr);
+
+// Entries object
+//------------------------
+const entries = Object.entries(openingHours);
+console.log('\nEntries:\n', entries);
+
+// [key, value]
+for (const [day, { open, close }] of entries) {
+    console.log(`On ${day} we open at ${open} and close at ${close}`);
+}
