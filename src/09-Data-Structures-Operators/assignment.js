@@ -214,10 +214,12 @@ const books = [
 ];
 
 // Assignment https://codingheroes.io/assignments/destructuring-arrays.html
-// Destructuring array
-console.log(`\x1b[1m%s\x1b[0m`, `\nDestructuring array`);
 
-// 1.1
+// 1. Destructuring array
+// ------------------------------------------------------------
+console.group(`\x1b[1m%s\x1b[0m`, `\n1. Destructuring array`);
+
+// 1.1 ---------------------------------
 console.log(`\x1b[1m%s\x1b[0m`, `1.1`);
 
 const [first, second] = books;
@@ -225,13 +227,13 @@ const [first, second] = books;
 console.log(`First book title:`, first.title);
 console.log(`Second book title:`, second.title);
 
-// 1.2
+// 1.2 ---------------------------------
 console.log(`\x1b[1m%s\x1b[0m`, `\n1.2`);
 
 const [, , thirdBook] = books;
 console.log(`Third book title: `, thirdBook.title);
 
-// 1.3
+// 1.3 ---------------------------------
 console.log(`\x1b[1m%s\x1b[0m`, `\n1.3`);
 
 const ratings = [
@@ -243,7 +245,7 @@ const [[, rating], [, ratingsCount]] = ratings;
 console.log(`rating:`, rating);
 console.log(`ratingsCount:`, ratingsCount);
 
-// 1.4
+// 1.4 ---------------------------------
 console.log(`\x1b[1m%s\x1b[0m`, `\n1.4`);
 
 const ratingStars = [63405, 1808];
@@ -254,8 +256,11 @@ console.log(`fiveStarRating:`, fiveStarRating);
 console.log(`oneStarRating:`, oneStarRating);
 console.log(`threeStarRating:`, threeStarRating);
 
-// Destructuring Object
-console.log(`\x1b[1m%s\x1b[0m`, `\nDestructuring Object`);
+console.groupEnd();
+
+// 2. Destructuring Object
+// ------------------------------------------------------------
+console.group(`\x1b[1m%s\x1b[0m`, `\n2. Destructuring Object`);
 
 // 2.1
 console.log(`\x1b[1m%s\x1b[0m`, `2.1`);
@@ -266,14 +271,14 @@ console.log(`title:`, title);
 console.log(`author:`, author);
 console.log(`ISBN:`, ISBN);
 
-// 2.2
+// 2.2 ---------------------------------
 console.log(`\x1b[1m%s\x1b[0m`, `\n2.2`);
 
 const [{ keywords: tags }] = books;
 
 console.log(`tags:`, tags);
 
-// 2.3
+// 2.3 ---------------------------------
 console.log(`\x1b[1m%s\x1b[0m`, `\n2.3`);
 
 const { language, programmingLanguage = 'unknown' } = books[6];
@@ -281,7 +286,7 @@ const { language, programmingLanguage = 'unknown' } = books[6];
 console.log(`language:`, language);
 console.log(`programmingLanguage:`, programmingLanguage);
 
-// 2.4
+// 2.4 ---------------------------------
 console.log(`\x1b[1m%s\x1b[0m`, `\n2.3`);
 
 let bookTitle = 'unknown';
@@ -292,7 +297,7 @@ let bookAuthor = 'unknown';
 console.log(`bookTitle:`, bookTitle);
 console.log(`bookAuthor:`, bookAuthor);
 
-// 2.5
+// 2.5 ---------------------------------
 console.log(`\x1b[1m%s\x1b[0m`, `\n2.5`);
 
 // const bookRating = books[0].thirdParty?.goodreads?.rating ?? 'not rating';
@@ -306,7 +311,7 @@ const {
 
 console.log(`bookRating:`, bookRating);
 
-// 2.6
+// 2.6 ---------------------------------
 console.log(`\x1b[1m%s\x1b[0m`, `\n2.5`);
 // eslint-disable-next-line no-shadow
 const printBookInfo = function ({ title, author, year = 'year unknown' }) {
@@ -314,3 +319,43 @@ const printBookInfo = function ({ title, author, year = 'year unknown' }) {
 };
 
 printBookInfo(first);
+
+console.groupEnd();
+
+// 11. Looping Object
+// ------------------------------------------------------------
+console.group(`\x1b[1m%s\x1b[0m`, '\n11. Looping Object');
+
+// 11.1 ---------------------------------
+console.log(`\x1b[1m%s\x1b[0m`, `\n11.1`);
+
+const entries = [];
+const {
+    thirdParty: { goodreads }
+} = first;
+
+Object.entries(goodreads);
+for (const entry of Object.keys(goodreads)) {
+    entries.push([entry]);
+}
+
+console.log(entries);
+
+// 11.2 ---------------------------------
+console.log(`\x1b[1m%s\x1b[0m`, `\n11.2`);
+
+for (const [index, value] of Object.values(goodreads).entries()) {
+    entries[index].push(value);
+}
+console.log(entries);
+
+// 11.3 ---------------------------------
+console.log(`\x1b[1m%s\x1b[0m`, `\n11.3`);
+
+const entries2 = Object.entries(goodreads);
+
+// 11.4 ---------------------------------
+
+console.log(`entries:`, entries);
+console.log(`entries2:`, entries2);
+console.groupEnd();
