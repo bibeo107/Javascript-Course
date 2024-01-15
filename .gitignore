@@ -4,3 +4,4 @@
 /.vscode
 /coverage
 **/junit.xml
+.DS_Store
