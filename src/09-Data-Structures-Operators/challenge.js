@@ -132,10 +132,20 @@ for (const [index, value] of scored.entries()) {
 
 // 2.2 Use a loop to calculate the average odd and log it to the console
 console.log(`\x1b[1m%s\x1b[0m`, `\n2.2`);
-const calAverage = (first, second, third) =>
+
+// Old way
+/* const calAverage = (first, second, third) =>
     Number.parseFloat((first + second + third) / 3).toFixed(2);
 
-const average = calAverage(team1, draw, team2);
+const average = calAverage(team1, draw, team2); */
+
+// New way
+const { odds } = game;
+let total = 0;
+for (const odd of Object.values(odds)) {
+    total += odd;
+}
+const average = (total / Object.keys(odds).length).toFixed(2);
 
 console.log(`odd average:`, average);
 
@@ -148,7 +158,6 @@ HINT: Note how the odds and the game objects have the same property names
 */
 console.log(`\x1b[1m%s\x1b[0m`, `\n2.3`);
 
-const { odds } = game;
 for (const [team, odd] of Object.entries(odds)) {
     const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
     console.log(`Odd of ${teamStr}: ${odd}`);
